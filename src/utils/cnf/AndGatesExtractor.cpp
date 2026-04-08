@@ -17,9 +17,9 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "AndGatesExtractor.hpp"
+#include "md4/utils/cnf/AndGatesExtractor.hpp"
 
-#include "src/formulaManager/cnf/CnfManager.hpp"
+#include "md4/formulaManager/cnf/CnfManager.hpp"
 
 namespace d4 {
 

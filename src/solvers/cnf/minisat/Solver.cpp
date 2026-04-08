@@ -20,18 +20,18 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 **************************************************************************************************/
 
-#include "Solver.hpp"
+#include "md4/solvers/cnf/minisat/Solver.hpp"
 
 #include <math.h>
 
 #include <iostream>
 
-#include "SolverTypes.hpp"
-#include "mtl/Alg.hpp"
-#include "mtl/Heap.hpp"
-#include "mtl/Sort.hpp"
-#include "mtl/Vec.hpp"
-#include "src/problem/ProblemTypes.hpp"
+#include "md4/solvers/cnf/minisat/SolverTypes.hpp"
+#include "md4/solvers/cnf/minisat/mtl/Alg.hpp"
+#include "md4/solvers/cnf/minisat/mtl/Heap.hpp"
+#include "md4/solvers/cnf/minisat/mtl/Sort.hpp"
+#include "md4/solvers/cnf/minisat/mtl/Vec.hpp"
+#include "md4/problem/ProblemTypes.hpp"
 
 namespace minisat {
 

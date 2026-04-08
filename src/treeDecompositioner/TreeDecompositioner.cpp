@@ -17,10 +17,10 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "TreeDecompositioner.hpp"
+#include "md4/treeDecompositioner/TreeDecompositioner.hpp"
 
-#include "TreeDecompositionerFlowCutter.hpp"
-#include "src/exceptions/FactoryException.hpp"
+#include "md4/treeDecompositioner/TreeDecompositionerFlowCutter.hpp"
+#include "md4/exceptions/FactoryException.hpp"
 
 namespace d4 {
 

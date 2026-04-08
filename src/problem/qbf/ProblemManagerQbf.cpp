@@ -17,10 +17,10 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "ProblemManagerQbf.hpp"
+#include "md4/problem/qbf/ProblemManagerQbf.hpp"
 
-#include "ParserQDimacs.hpp"
-#include "src/problem/ProblemManager.hpp"
+#include "md4/problem/qbf/ParserQDimacs.hpp"
+#include "md4/problem/ProblemManager.hpp"
 
 namespace d4 {
 /**

@@ -17,12 +17,12 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "ParserQDimacs.hpp"
+#include "md4/problem/qbf/ParserQDimacs.hpp"
 
 #include <algorithm>
 
-#include "src/problem/ProblemManager.hpp"
-#include "src/utils/Parsing.hpp"
+#include "md4/problem/ProblemManager.hpp"
+#include "md4/utils/Parsing.hpp"
 
 namespace d4 {
 

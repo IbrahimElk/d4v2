@@ -17,13 +17,13 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "ParserDimacs.hpp"
+#include "md4/problem/cnf/ParserDimacs.hpp"
 
 #include <algorithm>
 
-#include "src/problem/ProblemManager.hpp"
-#include "src/problem/cnf/ProblemManagerCnf.hpp"
-#include "src/utils/Parsing.hpp"
+#include "md4/problem/ProblemManager.hpp"
+#include "md4/problem/cnf/ProblemManagerCnf.hpp"
+#include "md4/utils/Parsing.hpp"
 
 namespace d4 {
 

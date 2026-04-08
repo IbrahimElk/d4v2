@@ -17,14 +17,14 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "CnfManager.hpp"
+#include "md4/formulaManager/cnf/CnfManager.hpp"
 
 #include <algorithm>  // std::sort
 #include <iostream>
 
-#include "CnfManagerDyn.hpp"
-#include "src/methods/nnf/Node.hpp"
-#include "src/problem/ProblemTypes.hpp"
+#include "md4/formulaManager/cnf/CnfManagerDyn.hpp"
+#include "md4/methods/nnf/Node.hpp"
+#include "md4/problem/ProblemTypes.hpp"
 
 namespace d4 {
 

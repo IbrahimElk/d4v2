@@ -17,14 +17,14 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "WrapperSolver.hpp"
+#include "md4/solvers/WrapperSolver.hpp"
 
-#include "circuit/WrapperCircuitGlucose.hpp"
-#include "circuit/WrapperCircuitMinisat.hpp"
-#include "cnf/WrapperGlucose.hpp"
-#include "cnf/WrapperMinisat.hpp"
-#include "src/exceptions/FactoryException.hpp"
-#include "src/utils/ErrorCode.hpp"
+#include "md4/solvers/circuit/WrapperCircuitGlucose.hpp"
+#include "md4/solvers/circuit/WrapperCircuitMinisat.hpp"
+#include "md4/solvers/cnf/WrapperGlucose.hpp"
+#include "md4/solvers/cnf/WrapperMinisat.hpp"
+#include "md4/exceptions/FactoryException.hpp"
+#include "md4/utils/ErrorCode.hpp"
 
 namespace d4 {
 /**

@@ -17,12 +17,12 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "PreprocEquiv.hpp"
+#include "md4/preprocs/cnf/PreprocEquiv.hpp"
 
 #include <csignal>
 
-#include "src/options/preprocs/OptionPreprocManager.hpp"
-#include "src/problem/cnf/ProblemManagerCnf.hpp"
+#include "md4/options/preprocs/OptionPreprocManager.hpp"
+#include "md4/problem/cnf/ProblemManagerCnf.hpp"
 
 namespace d4 {
 

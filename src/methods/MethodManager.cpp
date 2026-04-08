@@ -17,26 +17,26 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "MethodManager.hpp"
+#include "md4/methods/MethodManager.hpp"
 
 #include <boost/multiprecision/cpp_int.hpp>
 #include <boost/multiprecision/gmp.hpp>
 
-#include "DpllStyleMethod.hpp"
-#include "Erosion.hpp"
-#include "ExistRandomExist.hpp"
-#include "MaxSharpSAT.hpp"
-#include "MinSharpSAT.hpp"
-#include "OperationManager.hpp"
-#include "ProjMCMethod.hpp"
-#include "src/configurations/ConfigurationDpllStyleMethod.hpp"
-#include "src/exceptions/BadBehaviourException.hpp"
-#include "src/exceptions/FactoryException.hpp"
-#include "src/options/branchingHeuristic/OptionBranchingHeuristic.hpp"
-#include "src/options/methods/OptionDpllStyleMethod.hpp"
-#include "src/options/methods/OptionMethodManager.hpp"
-#include "src/options/preprocs/OptionPreprocManager.hpp"
-#include "src/problem/ProblemManager.hpp"
+#include "md4/methods/DpllStyleMethod.hpp"
+#include "md4/methods/Erosion.hpp"
+#include "md4/methods/ExistRandomExist.hpp"
+#include "md4/methods/MaxSharpSAT.hpp"
+#include "md4/methods/MinSharpSAT.hpp"
+#include "md4/methods/OperationManager.hpp"
+#include "md4/methods/ProjMCMethod.hpp"
+#include "md4/configurations/ConfigurationDpllStyleMethod.hpp"
+#include "md4/exceptions/BadBehaviourException.hpp"
+#include "md4/exceptions/FactoryException.hpp"
+#include "md4/options/branchingHeuristic/OptionBranchingHeuristic.hpp"
+#include "md4/options/methods/OptionDpllStyleMethod.hpp"
+#include "md4/options/methods/OptionMethodManager.hpp"
+#include "md4/options/preprocs/OptionPreprocManager.hpp"
+#include "md4/problem/ProblemManager.hpp"
 
 namespace d4 {
 namespace mpz = boost::multiprecision;

@@ -17,9 +17,9 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "CircuitWithCnfManager.hpp"
+#include "md4/formulaManager/circuit/CircuitWithCnfManager.hpp"
 
-#include "src/problem/ProblemManager.hpp"
+#include "md4/problem/ProblemManager.hpp"
 
 #define TEST_DEBUG 0
 

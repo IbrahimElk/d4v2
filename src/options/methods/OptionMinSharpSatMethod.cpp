@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "OptionMinSharpSatMethod.hpp"
+#include "md4/options/methods/OptionMinSharpSatMethod.hpp"
 
 namespace d4 {
 

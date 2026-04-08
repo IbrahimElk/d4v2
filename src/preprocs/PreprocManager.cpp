@@ -16,21 +16,21 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
-#include "PreprocManager.hpp"
+#include "md4/preprocs/PreprocManager.hpp"
 
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/split.hpp>
 #include <csignal>
 
-#include "circuit/PreprocBasicCircuit.hpp"
-#include "cnf/PreprocBackboneCnf.hpp"
-#include "cnf/PreprocBasicCnf.hpp"
-#include "cnf/PreprocCompileEquiv.hpp"
-#include "cnf/PreprocEquiv.hpp"
-#include "cnf/PreprocReducer.hpp"
-#include "cnf/PreprocSharpEquiv.hpp"
-#include "src/exceptions/FactoryException.hpp"
-#include "src/options/preprocs/OptionPreprocManager.hpp"
+#include "md4/preprocs/circuit/PreprocBasicCircuit.hpp"
+#include "md4/preprocs/cnf/PreprocBackboneCnf.hpp"
+#include "md4/preprocs/cnf/PreprocBasicCnf.hpp"
+#include "md4/preprocs/cnf/PreprocCompileEquiv.hpp"
+#include "md4/preprocs/cnf/PreprocEquiv.hpp"
+#include "md4/preprocs/cnf/PreprocReducer.hpp"
+#include "md4/preprocs/cnf/PreprocSharpEquiv.hpp"
+#include "md4/exceptions/FactoryException.hpp"
+#include "md4/options/preprocs/OptionPreprocManager.hpp"
 
 namespace d4 {
 

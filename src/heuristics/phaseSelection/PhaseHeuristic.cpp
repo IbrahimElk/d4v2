@@ -16,13 +16,14 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
-#include "PhaseHeuristic.hpp"
 
-#include "PhaseHeuristicFalse.hpp"
-#include "PhaseHeuristicPolarity.hpp"
-#include "PhaseHeuristicTrue.hpp"
-#include "cnf/PhaseHeuristicOccurrence.hpp"
-#include "src/exceptions/FactoryException.hpp"
+#include "md4/heuristics/phaseSelection/PhaseHeuristic.hpp"
+
+#include "md4/heuristics/phaseSelection/PhaseHeuristicFalse.hpp"
+#include "md4/heuristics/phaseSelection/PhaseHeuristicPolarity.hpp"
+#include "md4/heuristics/phaseSelection/PhaseHeuristicTrue.hpp"
+#include "md4/heuristics/phaseSelection/cnf/PhaseHeuristicOccurrence.hpp"
+#include "md4/exceptions/FactoryException.hpp"
 
 namespace d4 {
 

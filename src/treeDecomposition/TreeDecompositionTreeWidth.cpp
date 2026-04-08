@@ -17,9 +17,9 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "TreeDecompositionTreeWidth.hpp"
+#include "md4/treeDecomposition/TreeDecompositionTreeWidth.hpp"
 
-#include "src/representation/graph/Graph.hpp"
+#include "md4/representation/graph/Graph.hpp"
 
 namespace d4 {
 /**

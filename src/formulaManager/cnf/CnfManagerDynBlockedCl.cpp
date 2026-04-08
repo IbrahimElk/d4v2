@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "CnfManagerDynBlockedCl.hpp"
+#include "md4/formulaManager/cnf/CnfManagerDynBlockedCl.hpp"
 
 namespace d4 {
 

@@ -17,11 +17,11 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "BranchingHeuristicLargeArity.hpp"
+#include "md4/heuristics/branchingHeuristic/BranchingHeuristicLargeArity.hpp"
 
 #include <algorithm>
 
-#include "src/formulaManager/cnf/CnfManager.hpp"
+#include "md4/formulaManager/cnf/CnfManager.hpp"
 
 namespace d4 {
 

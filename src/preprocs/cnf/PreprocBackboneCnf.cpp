@@ -16,16 +16,16 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
-#include "PreprocBackboneCnf.hpp"
+#include "md4/preprocs/cnf/PreprocBackboneCnf.hpp"
 
 #include <bits/types/clock_t.h>
 
 #include <csignal>
 #include <ctime>
 
-#include "3rdParty/bipe/src/bipartition/methods/Method.hpp"
-#include "src/options/preprocs/OptionPreprocManager.hpp"
-#include "src/problem/cnf/ProblemManagerCnf.hpp"
+#include "bipe/src/bipartition/methods/Method.hpp"
+#include "md4/options/preprocs/OptionPreprocManager.hpp"
+#include "md4/problem/cnf/ProblemManagerCnf.hpp"
 
 namespace d4 {
 

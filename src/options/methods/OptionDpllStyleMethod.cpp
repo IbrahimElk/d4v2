@@ -17,9 +17,9 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "OptionDpllStyleMethod.hpp"
+#include "md4/options/methods/OptionDpllStyleMethod.hpp"
 
-#include "OptionOperationManager.hpp"
+#include "md4/options/methods/OptionOperationManager.hpp"
 
 namespace d4 {
 
@@ -30,6 +30,7 @@ OptionDpllStyleMethod::OptionDpllStyleMethod(
     const ConfigurationDpllStyleMethod& config) {
   // Operator used:
   optionOperationManager.operatorType = config.operationType;
+  optionOperationManager.customOperation = config.customOperation;
 
   // Cache Options:
   optionCacheManager = OptionCacheManager(config.cache);

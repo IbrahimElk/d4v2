@@ -16,14 +16,14 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
-#include "PreprocCompileEquiv.hpp"
+#include "md4/preprocs/cnf/PreprocCompileEquiv.hpp"
 
 #include <csignal>
 
-#include "3rdParty/bipe/src/bipartition/methods/Backbone.hpp"
-#include "3rdParty/bipe/src/bipartition/methods/Bipartition.hpp"
-#include "3rdParty/bipe/src/bipartition/methods/DACircuit.hpp"
-#include "src/options/preprocs/OptionPreprocManager.hpp"
+#include "bipe/src/bipartition/methods/Backbone.hpp"
+#include "bipe/src/bipartition/methods/Bipartition.hpp"
+#include "bipe/src/bipartition/methods/DACircuit.hpp"
+#include "md4/options/preprocs/OptionPreprocManager.hpp"
 
 namespace d4 {
 

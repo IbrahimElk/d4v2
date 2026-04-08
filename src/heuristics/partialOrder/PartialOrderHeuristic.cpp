@@ -16,11 +16,11 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
-#include "PartialOrderHeuristic.hpp"
+#include "md4/heuristics/partialOrder/PartialOrderHeuristic.hpp"
 
-#include "PartialOrderHeuristicNone.hpp"
-#include "PartialOrderHeuristicTreeDecomp.hpp"
-#include "src/exceptions/FactoryException.hpp"
+#include "md4/heuristics/partialOrder/PartialOrderHeuristicNone.hpp"
+#include "md4/heuristics/partialOrder/PartialOrderHeuristicTreeDecomp.hpp"
+#include "md4/exceptions/FactoryException.hpp"
 
 namespace d4 {
 

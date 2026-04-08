@@ -17,12 +17,12 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "HyperGraphExtractor.hpp"
+#include "md4/representation/hypergraph/HyperGraphExtractor.hpp"
 
-#include "cnf/HyperGraphExtractorCnfDual.hpp"
-#include "src/exceptions/FactoryException.hpp"
-#include "src/options/branchingHeuristic/OptionPartialOrderHeuristic.hpp"
-#include "src/utils/ErrorCode.hpp"
+#include "md4/representation/hypergraph/cnf/HyperGraphExtractorCnfDual.hpp"
+#include "md4/exceptions/FactoryException.hpp"
+#include "md4/options/branchingHeuristic/OptionPartialOrderHeuristic.hpp"
+#include "md4/utils/ErrorCode.hpp"
 
 namespace d4 {
 

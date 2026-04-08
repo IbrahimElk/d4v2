@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "PhaseHeuristicOccurrence.hpp"
+#include "md4/heuristics/phaseSelection/cnf/PhaseHeuristicOccurrence.hpp"
 
 namespace d4 {
 

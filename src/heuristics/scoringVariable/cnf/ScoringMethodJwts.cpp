@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "ScoringMethodJwts.hpp"
+#include "md4/heuristics/scoringVariable/cnf/ScoringMethodJwts.hpp"
 
 namespace d4 {
 

@@ -17,9 +17,9 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "PartialOrderHeuristicTreeDecomp.hpp"
+#include "md4/heuristics/partialOrder/PartialOrderHeuristicTreeDecomp.hpp"
 
-#include "src/exceptions/FactoryException.hpp"
+#include "md4/exceptions/FactoryException.hpp"
 
 namespace d4 {
 

@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "OptionQbfCounter.hpp"
+#include "md4/options/methods/OptionQbfCounter.hpp"
 
 namespace d4 {
 

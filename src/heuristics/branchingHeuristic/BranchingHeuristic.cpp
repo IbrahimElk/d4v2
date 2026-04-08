@@ -17,12 +17,12 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "BranchingHeuristic.hpp"
+#include "md4/heuristics/branchingHeuristic/BranchingHeuristic.hpp"
 
-#include "BranchingHeuristicClassic.hpp"
-#include "BranchingHeuristicHybridPartialClassic.hpp"
-#include "BranchingHeuristicLargeArity.hpp"
-#include "src/exceptions/FactoryException.hpp"
+#include "md4/heuristics/branchingHeuristic/BranchingHeuristicClassic.hpp"
+#include "md4/heuristics/branchingHeuristic/BranchingHeuristicHybridPartialClassic.hpp"
+#include "md4/heuristics/branchingHeuristic/BranchingHeuristicLargeArity.hpp"
+#include "md4/exceptions/FactoryException.hpp"
 
 namespace d4 {
 

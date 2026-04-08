@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "HyperGraph.hpp"
+#include "md4/representation/hypergraph/HyperGraph.hpp"
 
 namespace d4 {
 /**

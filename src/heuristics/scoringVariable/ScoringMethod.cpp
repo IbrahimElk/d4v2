@@ -16,16 +16,16 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
-#include "ScoringMethod.hpp"
+#include "md4/heuristics/scoringVariable/ScoringMethod.hpp"
 
-#include "cnf/ScoringMethodDlcs.hpp"
-#include "cnf/ScoringMethodJwts.hpp"
-#include "cnf/ScoringMethodMom.hpp"
-#include "cnf/ScoringMethodVsads.hpp"
-#include "cnf/ScoringMethodVsids.hpp"
-#include "src/exceptions/FactoryException.hpp"
-#include "src/formulaManager/circuit/CircuitWithCnfManager.hpp"
-#include "src/utils/ErrorCode.hpp"
+#include "md4/heuristics/scoringVariable/cnf/ScoringMethodDlcs.hpp"
+#include "md4/heuristics/scoringVariable/cnf/ScoringMethodJwts.hpp"
+#include "md4/heuristics/scoringVariable/cnf/ScoringMethodMom.hpp"
+#include "md4/heuristics/scoringVariable/cnf/ScoringMethodVsads.hpp"
+#include "md4/heuristics/scoringVariable/cnf/ScoringMethodVsids.hpp"
+#include "md4/exceptions/FactoryException.hpp"
+#include "md4/formulaManager/circuit/CircuitWithCnfManager.hpp"
+#include "md4/utils/ErrorCode.hpp"
 
 namespace d4 {
 

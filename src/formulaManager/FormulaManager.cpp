@@ -16,14 +16,14 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
-#include "FormulaManager.hpp"
+#include "md4/formulaManager/FormulaManager.hpp"
 
-#include "circuit/CircuitWithCnfManager.hpp"
-#include "cnf/CnfManagerDyn.hpp"
-#include "cnf/CnfManagerDynBlockedCl.hpp"
-#include "cnf/CnfManagerDynPure.hpp"
-#include "src/exceptions/FactoryException.hpp"
-#include "src/utils/ErrorCode.hpp"
+#include "md4/formulaManager/circuit/CircuitWithCnfManager.hpp"
+#include "md4/formulaManager/cnf/CnfManagerDyn.hpp"
+#include "md4/formulaManager/cnf/CnfManagerDynBlockedCl.hpp"
+#include "md4/formulaManager/cnf/CnfManagerDynPure.hpp"
+#include "md4/exceptions/FactoryException.hpp"
+#include "md4/utils/ErrorCode.hpp"
 
 namespace d4 {
 

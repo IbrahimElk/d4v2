@@ -17,18 +17,18 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "WrapperMinisat.hpp"
+#include "md4/solvers/cnf/WrapperMinisat.hpp"
 
 #include <cassert>
 #include <iostream>
 #include <typeinfo>
 
-#include "minisat/Solver.hpp"
-#include "minisat/SolverTypes.hpp"
-#include "minisat/mtl/Vec.hpp"
-#include "src/problem/CnfMatrix.hpp"
-#include "src/problem/ProblemManager.hpp"
-#include "src/utils/ErrorCode.hpp"
+#include "md4/solvers/cnf/minisat/Solver.hpp"
+#include "md4/solvers/cnf/minisat/SolverTypes.hpp"
+#include "md4/solvers/cnf/minisat/mtl/Vec.hpp"
+#include "md4/problem/CnfMatrix.hpp"
+#include "md4/problem/ProblemManager.hpp"
+#include "md4/utils/ErrorCode.hpp"
 
 namespace d4 {
 using minisat::toInt;

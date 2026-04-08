@@ -17,9 +17,9 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "OptionCacheManager.hpp"
+#include "md4/options/cache/OptionCacheManager.hpp"
 
-#include "src/configurations/ConfigurationCache.hpp"
+#include "md4/configurations/ConfigurationCache.hpp"
 
 namespace d4 {
 /**
