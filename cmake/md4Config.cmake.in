@@ -5,6 +5,6 @@ include(CMakeFindDependencyMacro)
 set(Boost_USE_STATIC_LIBS ON)
 find_dependency(Boost)
 
-include("${CMAKE_CURRENT_LIST_DIR}/MD4Targets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/md4Targets.cmake")
 
-check_required_components(MD4)
+check_required_components(md4)

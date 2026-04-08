@@ -19,7 +19,6 @@ file(GLOB_RECURSE MD4_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 file(GLOB_RECURSE MD4_HEADERS CONFIGURE_DEPENDS "include/*.hpp")
 
 add_library(d4 ${MD4_SOURCES} ${MD4_HEADERS})
-add_library(MD4::d4 ALIAS d4)
 
 target_include_directories(d4
     PUBLIC
@@ -84,7 +83,7 @@ target_link_libraries(d4
 include(GNUInstallDirs)
 
 install(TARGETS d4
-    EXPORT MD4Targets
+    EXPORT md4Targets
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
@@ -94,28 +93,28 @@ install(DIRECTORY include/
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/md4
 )
 
-install(EXPORT MD4Targets
-    FILE MD4Targets.cmake
-    NAMESPACE MD4::
+install(EXPORT md4Targets
+    FILE md4Targets.cmake
+    NAMESPACE md4::
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/md4
 )
 
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/MD4Config.cmake.in
-    ${CMAKE_CURRENT_BINARY_DIR}/MD4Config.cmake
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/md4Config.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/md4Config.cmake
     INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/md4
 )
 
 write_basic_package_version_file(
-    ${CMAKE_CURRENT_BINARY_DIR}/MD4ConfigVersion.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/md4ConfigVersion.cmake
     VERSION ${PROJECT_VERSION}
     COMPATIBILITY SameMajorVersion
 )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/MD4Config.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/MD4ConfigVersion.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/md4Config.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/md4ConfigVersion.cmake
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/md4
 )
