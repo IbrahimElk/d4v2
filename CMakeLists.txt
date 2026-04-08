@@ -26,6 +26,7 @@ target_include_directories(d4
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
     PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty
         ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/glucose-3.0
         ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/bipe
         ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/flowCutter
