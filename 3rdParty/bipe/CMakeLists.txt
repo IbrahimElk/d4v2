@@ -20,15 +20,15 @@ file(GLOB_RECURSE INCLUDES ./src/**.hpp)
 set(SRCS ${SOURCES})
 set(HEADERS ${INCLUDES})
 
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rdParty/glucose-3.0/)
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/glucose-3.0/)
 
 if (NOT DEFINED BUILD_MODE)
    set(BUILD_MODE 1)
 endif()
 
 
-set(libList ${CMAKE_SOURCE_DIR}/3rdParty/glucose-3.0/core/libglucose.a)
+set(libList ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/glucose-3.0/core/libglucose.a)
 
 # flags
 if(${BUILD_MODE} EQUAL 1)  
@@ -68,7 +68,7 @@ else()
 endif()
 
 
-file(GLOB cmake_generated ${CMAKE_SOURCE_DIR}/srcBipe/*~)
+file(GLOB cmake_generated ${CMAKE_CURRENT_SOURCE_DIR}/srcBipe/*~)
 
 foreach(file ${cmake_generated})
 
