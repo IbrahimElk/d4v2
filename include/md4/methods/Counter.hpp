@@ -21,7 +21,6 @@
 #include <boost/multiprecision/gmp.hpp>
 #include <vector>
 
-#include "md4/methods/DpllStyleMethod.hpp"
 #include "md4/methods/nnf/Node.hpp"
 #include "md4/configurations/Configuration.hpp"
 #include "md4/exceptions/BadBehaviourException.hpp"

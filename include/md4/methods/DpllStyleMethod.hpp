@@ -22,6 +22,7 @@
 #include <iomanip>
 #include <iostream>
 
+#include "md4/methods/Counter.hpp"
 #include "md4/methods/DataBranch.hpp"
 #include "md4/methods/MethodManager.hpp"
 #include "md4/caching/CacheManager.hpp"
@@ -50,8 +51,6 @@
 #include "OperationManager.hpp"
 
 namespace d4 {
-template <class T>
-class Counter;
 
 template <class T, class U>
 class DpllStyleMethod : public MethodManager, public Counter<T> {
