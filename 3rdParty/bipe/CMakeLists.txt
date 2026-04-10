@@ -36,7 +36,7 @@ if(${BUILD_MODE} EQUAL 1)
   set(CMAKE_BUILD_TYPE Debug)    
   add_library(bipe ${SRCS})    
 
-  target_compile_options(bipe PUBLIC -DNOMAIN -std=c++20 -Wall -pg -O2 -Wno-class-memaccess -Wno-format -Wno-misleading-indentation -Wno-literal-suffix -Wno-sign-compare -Wno-parentheses)
+  target_compile_options(bipe PRIVATE -DNOMAIN -std=c++20 -Wall -pg -O2 -Wno-class-memaccess -Wno-format -Wno-misleading-indentation -Wno-literal-suffix -Wno-sign-compare -Wno-parentheses)
   target_link_libraries (bipe -lz -O2 ${libList})
   target_include_directories (bipe PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -47,7 +47,7 @@ elseif(${BUILD_MODE} EQUAL 2)
   set(CMAKE_BUILD_TYPE Release)
   add_library(bipe ${SRCS})
 
-  target_compile_options(bipe PUBLIC -DNOMAIN -std=c++20 -Wall -O3 -Wno-class-memaccess -Wno-format -Wno-misleading-indentation -Wno-literal-suffix -Wno-sign-compare -Wno-parentheses -static)
+  target_compile_options(bipe PRIVATE -DNOMAIN -std=c++20 -Wall -O3 -Wno-class-memaccess -Wno-format -Wno-misleading-indentation -Wno-literal-suffix -Wno-sign-compare -Wno-parentheses -static)
   target_link_libraries (bipe -lz -O3 ${libList} -static)
   target_include_directories (bipe PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -57,7 +57,7 @@ elseif(${BUILD_MODE} EQUAL 0)
   message("Library creation")
   add_library(bipe ${SRCS})
 
-  target_compile_options(bipe PUBLIC -DNOMAIN -std=c++20 -Wall -O3 -Wno-class-memaccess -Wno-format -Wno-misleading-indentation -Wno-literal-suffix -Wno-sign-compare -Wno-parentheses)
+  target_compile_options(bipe PRIVATE -DNOMAIN -std=c++20 -Wall -O3 -Wno-class-memaccess -Wno-format -Wno-misleading-indentation -Wno-literal-suffix -Wno-sign-compare -Wno-parentheses)
   target_link_libraries (bipe -lz -O3 ${libList})
   target_include_directories (bipe PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
