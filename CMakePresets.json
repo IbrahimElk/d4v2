@@ -1,0 +1,61 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": { "major": 3, "minor": 10, "patch": 0 },
+
+  "configurePresets": [
+    {
+      "name": "dev",
+      "displayName": "Development",
+      "description": "RelWithDebInfo without NDEBUG, assertions stay active (-O2 -g, no -DNDEBUG).",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -g",
+        "MD4_ENABLE_TESTS": "ON"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release (no tests)",
+      "description": "Standard Release build, -O3 -DNDEBUG, assertions stripped.",
+      "binaryDir": "${sourceDir}/build-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "MD4_ENABLE_TESTS": "OFF"
+      }
+    }
+  ],
+
+  "buildPresets": [
+    {
+      "name": "dev",
+      "configurePreset": "dev"
+    },
+    {
+      "name": "release",
+      "configurePreset": "release"
+    }
+  ],
+
+  "testPresets": [
+    {
+      "name": "dev",
+      "configurePreset": "dev",
+      "output": { "outputOnFailure": true },
+      "execution": { "jobs": 0 },
+      "filter": {
+        "exclude": { "label": "slow" }
+      }
+    },
+    {
+      "name": "dev-slow",
+      "configurePreset": "dev",
+      "output": { "outputOnFailure": true },
+      "execution": { "jobs": 0 },
+      "filter": {
+        "include": { "label": "slow" }
+      }
+    }
+  ]
+}
