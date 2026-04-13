@@ -16,7 +16,7 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "src/bipartition/methods/Bipartition.hpp"
+#include "bipe/bipartition/methods/Bipartition.hpp"
 
 #include <cassert>
 #include <ctime>
@@ -25,11 +25,11 @@
 #include <utility>
 #include <vector>
 
-#include "src/bipartition/heuristic/HeuristicBipartition.hpp"
-#include "src/solver/WrapperSolver.hpp"
-#include "src/utils/FactoryException.hpp"
-#include "src/utils/Gate.hpp"
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartition.hpp"
+#include "bipe/solver/WrapperSolver.hpp"
+#include "bipe/utils/FactoryException.hpp"
+#include "bipe/utils/Gate.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 namespace bipartition {

@@ -19,7 +19,7 @@
 
 #include <vector>
 
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 class Problem {

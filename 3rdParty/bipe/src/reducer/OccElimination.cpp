@@ -16,11 +16,11 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "OccElimination.hpp"
+#include "bipe/reducer/OccElimination.hpp"
 
 #include <algorithm>
 
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 namespace reducer {

@@ -19,9 +19,9 @@
 
 #include "3rdParty/glucose-3.0/core/Solver.h"
 #include "core/SolverTypes.h"
-#include "src/solver/WrapperSolver.hpp"
-#include "src/utils/Problem.hpp"
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/solver/WrapperSolver.hpp"
+#include "bipe/utils/Problem.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 class WrapperGlucose : public WrapperSolver {

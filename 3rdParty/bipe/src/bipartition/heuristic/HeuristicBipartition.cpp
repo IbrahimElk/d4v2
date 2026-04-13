@@ -15,13 +15,13 @@
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include "src/bipartition/heuristic/HeuristicBipartition.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartition.hpp"
 
-#include "src/bipartition/heuristic/HeuristicBipartitionAscOcc.hpp"
-#include "src/bipartition/heuristic/HeuristicBipartitionGenTaut.hpp"
-#include "src/bipartition/heuristic/HeuristicBipartitionNaturalOrder.hpp"
-#include "src/bipartition/heuristic/HeuristicBipartitionRandom.hpp"
-#include "src/utils/FactoryException.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartitionAscOcc.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartitionGenTaut.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartitionNaturalOrder.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartitionRandom.hpp"
+#include "bipe/utils/FactoryException.hpp"
 
 namespace bipe {
 namespace bipartition {

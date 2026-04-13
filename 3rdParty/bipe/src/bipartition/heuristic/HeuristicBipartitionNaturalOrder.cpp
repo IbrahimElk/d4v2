@@ -16,7 +16,7 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "src/bipartition/heuristic/HeuristicBipartitionNaturalOrder.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartitionNaturalOrder.hpp"
 
 #include <algorithm>
 

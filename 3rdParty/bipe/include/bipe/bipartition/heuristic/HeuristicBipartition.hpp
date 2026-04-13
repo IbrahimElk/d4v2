@@ -17,15 +17,35 @@
  */
 #pragma once
 
-#include "src/bipartition/heuristic/HeuristicBipartition.hpp"
-#include "src/utils/Problem.hpp"
+#include "bipe/utils/Problem.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 namespace bipartition {
-class HeuristicBipartitionNaturalOrder : public HeuristicBipartition {
+class HeuristicBipartition {
+ protected:
+  std::vector<Lit> m_assumptions;
+
  public:
-  HeuristicBipartitionNaturalOrder(Problem &p,
-                                   const std::vector<Lit> &selectors);
+  virtual ~HeuristicBipartition() {}
+
+  static HeuristicBipartition *makeHeuristicBipartition(
+      Problem &p, const std::vector<Lit> &selectors, const std::string &method,
+      std::ostream &out);
+  inline std::vector<Lit> &remainingAssumptions() { return m_assumptions; }
+  inline bool isEmpty() { return !m_assumptions.size(); }
+
+  inline void popVarFromAssumption(Var v) {
+    unsigned j = 0;
+    for (unsigned i = 0; i < m_assumptions.size(); i++)
+      if (m_assumptions[i].var() != v) m_assumptions[j++] = m_assumptions[i];
+    m_assumptions.resize(j);
+  }
+
+  inline void setAssumption(std::vector<Lit> &assumptions) {
+    m_assumptions = assumptions;
+  }
+  virtual Lit nextAssumption();
 };
 }  // namespace bipartition
 }  // namespace bipe

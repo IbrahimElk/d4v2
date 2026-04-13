@@ -16,7 +16,7 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "src/bipartition/heuristic/HeuristicBipartitionRandom.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartitionRandom.hpp"
 
 #include <algorithm>
 #include <iterator>

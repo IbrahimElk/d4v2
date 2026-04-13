@@ -18,8 +18,8 @@
 
 #pragma once
 
-#include "src/utils/Gate.hpp"
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/utils/Gate.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 namespace eliminator {

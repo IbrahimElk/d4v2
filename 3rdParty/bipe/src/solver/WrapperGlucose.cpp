@@ -16,7 +16,7 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 // #include <bits/stdint-uintn.h>
-#include "src/solver/WrapperGlucose.hpp"
+#include "bipe/solver/WrapperGlucose.hpp"
 
 #include <iostream>
 #include <typeinfo>
@@ -25,8 +25,8 @@
 #include "3rdParty/glucose-3.0/core/Solver.h"
 #include "3rdParty/glucose-3.0/core/SolverTypes.h"
 #include "3rdParty/glucose-3.0/mtl/Vec.h"
-#include "src/utils/Problem.hpp"
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/utils/Problem.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 

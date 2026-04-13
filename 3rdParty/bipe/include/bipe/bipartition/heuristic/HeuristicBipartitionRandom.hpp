@@ -17,27 +17,14 @@
  */
 #pragma once
 
-#include "src/bipartition/methods/Method.hpp"
-#include "src/bipartition/option/OptionBackbone.hpp"
-#include "src/utils/Gate.hpp"
-#include "src/utils/Problem.hpp"
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartition.hpp"
+#include "bipe/utils/Problem.hpp"
 
 namespace bipe {
 namespace bipartition {
-class Backbone : public Method {
- private:
-  class WrapperSolver *m_solver = nullptr;
-
+class HeuristicBipartitionRandom : public HeuristicBipartition {
  public:
-  ~Backbone();
-  Backbone();
-
-  void interrupt();
-
-  bool run(Problem &p, std::vector<Gate> &backbone,
-           std::vector<std::vector<bool>> &setOfModels, OptionBackbone option,
-           std::ostream &out);
+  HeuristicBipartitionRandom(Problem &p, const std::vector<Lit> &selectors);
 };
 }  // namespace bipartition
 }  // namespace bipe

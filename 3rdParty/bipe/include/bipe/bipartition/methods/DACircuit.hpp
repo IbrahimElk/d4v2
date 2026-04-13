@@ -19,11 +19,11 @@
 
 #include <vector>
 
-#include "src/bipartition/methods/Method.hpp"
-#include "src/bipartition/option/Option.hpp"
-#include "src/solver/WrapperSolver.hpp"
-#include "src/utils/Gate.hpp"
-#include "src/utils/Problem.hpp"
+#include "bipe/bipartition/methods/Method.hpp"
+#include "bipe/bipartition/option/Option.hpp"
+#include "bipe/solver/WrapperSolver.hpp"
+#include "bipe/utils/Gate.hpp"
+#include "bipe/utils/Problem.hpp"
 
 namespace bipe {
 namespace bipartition {

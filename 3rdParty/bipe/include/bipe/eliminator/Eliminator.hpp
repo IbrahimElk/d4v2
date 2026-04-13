@@ -23,7 +23,7 @@
 
 #include "EliminatorGates.hpp"
 #include "EliminatorResolution.hpp"
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 namespace eliminator {

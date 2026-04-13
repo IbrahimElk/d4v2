@@ -15,11 +15,11 @@
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include "Combinaison.hpp"
+#include "bipe/reducer/Combinaison.hpp"
 
-#include "OccElimination.hpp"
-#include "Vivification.hpp"
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/reducer/OccElimination.hpp"
+#include "bipe/reducer/Vivification.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 namespace reducer {

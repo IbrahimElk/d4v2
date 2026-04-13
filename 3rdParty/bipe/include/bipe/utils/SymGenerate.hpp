@@ -15,25 +15,27 @@
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include "bipe/solver/WrapperSolver.hpp"
 
-#include "bipe/solver/WrapperGlucose.hpp"
-#include "bipe/utils/FactoryException.hpp"
+#include <cstring>
+#include <vector>
+
+#include "bipe/utils/Problem.hpp"
 
 namespace bipe {
-/**
-   Wrapper to get a solver able to solve the input problem for the
-   compilation/counting problems.
-
-   @param[in] vm, the options.
- */
-WrapperSolver *WrapperSolver::makeWrapperSolver(const std::string solverName,
-                                                std::ostream &out) {
-  out << "c [CONSTRUCTOR] Solver: " << solverName << "\n";
-
-  if (solverName == "glucose") return new WrapperGlucose();
-
-  throw(FactoryException("Cannot create a WrapperSolver", __FILE__, __LINE__));
-}  // makeWrapperSolver
-
+class SymGenerate {
+ public:
+  /**
+   * @brief Get the Symmetries that are contains in the given problem.
+   *
+   * @param path is the path to get the program used to compute the symmetries.
+   * @param file is the input file we are looking for symmetries (DIMACS
+   * format).
+   * @param verb is set to true if we want to display some information.
+   * @param nbVar is the number of variables of the given CNF formula.
+   * @param[out] symGroup is the computed symmetry groups.
+   */
+  void getSymmetries(const std::string &path, const std::string &file,
+                     bool verb, unsigned nbVar,
+                     std::vector<std::vector<Var>> &symGroup);
+};
 }  // namespace bipe

@@ -15,46 +15,17 @@
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
 #pragma once
 
-#include <vector>
-
-#include "src/utils/Problem.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartition.hpp"
+#include "bipe/utils/Problem.hpp"
 
 namespace bipe {
-
-enum TypeGate { UNIT, EQUIV, OR, AND, XOR, RM };
-
-struct Gate {
-  TypeGate type;
-  Lit output;
-  std::vector<Lit> input;
-
-  inline void display() {
-    std::cout << output << " <-> ";
-
-    switch (type) {
-      case UNIT:
-        std::cout << "(T";
-        break;
-      case EQUIV:
-        std::cout << "(";
-        break;
-      case OR:
-        std::cout << "OR(";
-        break;
-      case AND:
-        std::cout << "AND(";
-        break;
-      case XOR:
-        std::cout << "(XOR";
-        break;
-      default:
-        break;
-    }
-
-    for (auto l : input) std::cout << l << " ";
-    std::cout << ")\n";
-  }
+namespace bipartition {
+class HeuristicBipartitionGenTaut : public HeuristicBipartition {
+ public:
+  HeuristicBipartitionGenTaut(Problem &p, const std::vector<Lit> &selectors);
 };
+}  // namespace bipartition
 }  // namespace bipe

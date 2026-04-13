@@ -23,14 +23,14 @@
 #include <string>
 #include <vector>
 
-#include "src/bipartition/heuristic/HeuristicBipartition.hpp"
-#include "src/bipartition/methods/Backbone.hpp"
-#include "src/bipartition/methods/Method.hpp"
-#include "src/bipartition/option/OptionBipartition.hpp"
-#include "src/solver/WrapperSolver.hpp"
-#include "src/utils/Gate.hpp"
-#include "src/utils/Problem.hpp"
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartition.hpp"
+#include "bipe/bipartition/methods/Backbone.hpp"
+#include "bipe/bipartition/methods/Method.hpp"
+#include "bipe/bipartition/option/OptionBipartition.hpp"
+#include "bipe/solver/WrapperSolver.hpp"
+#include "bipe/utils/Gate.hpp"
+#include "bipe/utils/Problem.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 namespace bipartition {

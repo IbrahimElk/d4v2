@@ -15,27 +15,17 @@
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+#pragma once
 
-#include <cstring>
-#include <vector>
-
-#include "src/utils/Problem.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartition.hpp"
+#include "bipe/utils/Problem.hpp"
 
 namespace bipe {
-class SymGenerate {
+namespace bipartition {
+class HeuristicBipartitionNaturalOrder : public HeuristicBipartition {
  public:
-  /**
-   * @brief Get the Symmetries that are contains in the given problem.
-   *
-   * @param path is the path to get the program used to compute the symmetries.
-   * @param file is the input file we are looking for symmetries (DIMACS
-   * format).
-   * @param verb is set to true if we want to display some information.
-   * @param nbVar is the number of variables of the given CNF formula.
-   * @param[out] symGroup is the computed symmetry groups.
-   */
-  void getSymmetries(const std::string &path, const std::string &file,
-                     bool verb, unsigned nbVar,
-                     std::vector<std::vector<Var>> &symGroup);
+  HeuristicBipartitionNaturalOrder(Problem &p,
+                                   const std::vector<Lit> &selectors);
 };
+}  // namespace bipartition
 }  // namespace bipe

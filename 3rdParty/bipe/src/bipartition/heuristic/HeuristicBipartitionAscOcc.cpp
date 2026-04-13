@@ -16,7 +16,7 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "src/bipartition/heuristic/HeuristicBipartitionAscOcc.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartitionAscOcc.hpp"
 
 #include <algorithm>
 

@@ -17,14 +17,14 @@
  */
 #pragma once
 
-#include "src/bipartition/heuristic/HeuristicBipartition.hpp"
-#include "src/utils/Problem.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartition.hpp"
+#include "bipe/utils/Problem.hpp"
 
 namespace bipe {
 namespace bipartition {
-class HeuristicBipartitionRandom : public HeuristicBipartition {
+class HeuristicBipartitionAscOcc : public HeuristicBipartition {
  public:
-  HeuristicBipartitionRandom(Problem &p, const std::vector<Lit> &selectors);
+  HeuristicBipartitionAscOcc(Problem &p, const std::vector<Lit> &selectors);
 };
 }  // namespace bipartition
 }  // namespace bipe

@@ -15,9 +15,9 @@
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include "Vivification.hpp"
+#include "bipe/reducer/Vivification.hpp"
 
-#include "src/utils/ProblemTypes.hpp"
+#include "bipe/utils/ProblemTypes.hpp"
 
 namespace bipe {
 namespace reducer {

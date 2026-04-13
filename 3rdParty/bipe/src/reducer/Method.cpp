@@ -16,14 +16,14 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "Method.hpp"
+#include "bipe/reducer/Method.hpp"
 
 #include <vector>
 
-#include "Combinaison.hpp"
-#include "OccElimination.hpp"
-#include "Vivification.hpp"
-#include "src/utils/FactoryException.hpp"
+#include "bipe/reducer/Combinaison.hpp"
+#include "bipe/reducer/OccElimination.hpp"
+#include "bipe/reducer/Vivification.hpp"
+#include "bipe/utils/FactoryException.hpp"
 
 namespace bipe {
 namespace reducer {

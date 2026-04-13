@@ -19,12 +19,12 @@
 
 #include <chrono>
 
-#include "src/bipartition/option/Option.hpp"
-#include "src/bipartition/option/OptionBackbone.hpp"
-#include "src/bipartition/option/OptionBipartition.hpp"
-#include "src/bipartition/option/OptionDac.hpp"
-#include "src/utils/Gate.hpp"
-#include "src/utils/Problem.hpp"
+#include "bipe/bipartition/option/Option.hpp"
+#include "bipe/bipartition/option/OptionBackbone.hpp"
+#include "bipe/bipartition/option/OptionBipartition.hpp"
+#include "bipe/bipartition/option/OptionDac.hpp"
+#include "bipe/utils/Gate.hpp"
+#include "bipe/utils/Problem.hpp"
 
 namespace bipe {
 
