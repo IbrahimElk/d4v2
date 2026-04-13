@@ -24,10 +24,10 @@
 #include <cassert>
 
 #include "ParseOption.hpp"
-#include "src/configurations/ConfigurationDpllStyleMethod.hpp"
-#include "src/methods/DpllStyleMethod.hpp"
-#include "src/methods/MethodManager.hpp"
-#include "src/options/methods/OptionDpllStyleMethod.hpp"
+#include "md4/configurations/ConfigurationDpllStyleMethod.hpp"
+#include "md4/methods/DpllStyleMethod.hpp"
+#include "md4/methods/MethodManager.hpp"
+#include "md4/options/methods/OptionDpllStyleMethod.hpp"
 
 extern d4::MethodManager *methodRun;
 

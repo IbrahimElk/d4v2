@@ -9,7 +9,7 @@ DEPS := $(OBJS:.o=.d)
 
 CPPFLAGS ?= -MMD -MP
 LIBS := -Wl,-R../../build/ ../../build/libd4.a -lboost_program_options -lz -lgmpxx -lgmp 
-INCLUDES := -I../../
+INCLUDES := -I../../include/
 
 c: $(BUILD_DIR)/$(EXEC)
 p: $(BUILD_DIR)/$(EXEC)_profile
