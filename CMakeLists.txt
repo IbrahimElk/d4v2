@@ -1,54 +1,48 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.10)
 project(md4 VERSION 0.1 LANGUAGES CXX)
 
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
 
-set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
-
-option(MD4_STATIC_LINK "Build with static linking" OFF)
+# option(MD4_STATIC_LINK "Build with static linking" OFF)
 option(MD4_ENABLE_PROFILING "Enable gprof profiling" OFF)
+option(MD4_ENABLE_TESTS "Register CTest tests" OFF)
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
 file(GLOB_RECURSE MD4_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 file(GLOB_RECURSE MD4_HEADERS CONFIGURE_DEPENDS "include/*.hpp")
 
-add_library(d4 ${MD4_SOURCES} ${MD4_HEADERS})
+# -----------------------------------------------
+# DEPENDENCIES
+# -----------------------------------------------
 
-target_include_directories(d4
-    PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        $<INSTALL_INTERFACE:include>
-    PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty
-        ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/glucose-3.0
-        ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/bipe
-        ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/flowCutter
+find_package(Boost       CONFIG REQUIRED COMPONENTS program_options)
+find_package(GMP         MODULE REQUIRED)
+find_package(GMPXX       MODULE REQUIRED)
+find_package(Flowcutter  MODULE REQUIRED)
+find_package(Bipe        MODULE REQUIRED)
+find_package(Glucose     MODULE REQUIRED)
+find_package(Patoh       MODULE REQUIRED)
+
+set(dependencies
+    Boost::boost
+    Boost::program_options
+    GMP::gmp
+    GMPXX::gmpxx
+    bipe
+    flowcutter
+    glucose_d4
+    Patoh::patoh
 )
-
-set(Boost_USE_STATIC_LIBS ON)
-find_package(Boost REQUIRED)
-target_link_libraries(d4 PRIVATE Boost::boost)
-
-set(MD4_THIRDPARTY_LIBS
-    ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/kahypar/build/lib/libkahypar.a
-    ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/flowCutter/libflowCutter.a
-    ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/bipe/build/libbipe.a
-    ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/bipe/3rdParty/glucose-3.0/core/libglucose.a
-    ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/patoh/libpatoh.a
-    ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/glucose-3.0/core/lib_glucose.a
-)
-
-find_library(ZLIB_LIBRARY z REQUIRED)
-find_library(GMP_LIBRARY gmp REQUIRED)
-find_library(GMPXX_LIBRARY gmpxx REQUIRED)
-
-target_compile_definitions(d4 PRIVATE NOMAIN)
 
 set(MD4_SUPPRESSED_WARNINGS
     -Wno-strict-aliasing
@@ -61,24 +55,72 @@ set(MD4_SUPPRESSED_WARNINGS
     -Wno-restrict
 )
 
-target_compile_options(d4 PRIVATE -Wall ${MD4_SUPPRESSED_WARNINGS})
+# -----------------------------------------------
+# LIBRARY D4
+# -----------------------------------------------
 
-if(MD4_STATIC_LINK)
-    target_link_options(d4 PRIVATE -static)
-endif()
+add_library(d4 SHARED ${MD4_SOURCES} ${MD4_HEADERS})
+
+target_include_directories(d4
+    PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty
+        ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/glucose-3.0
+        ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/bipe
+        ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/flowCutter
+)
+
+target_link_libraries(d4 PRIVATE ${dependencies})
+target_compile_definitions(d4 PRIVATE NOMAIN)
+target_compile_options(d4 PRIVATE -Wall ${MD4_SUPPRESSED_WARNINGS})
 
 if(MD4_ENABLE_PROFILING)
     target_compile_options(d4 PRIVATE -pg)
     target_link_options(d4 PRIVATE -pg)
 endif()
 
-target_link_libraries(d4
+# -----------------------------------------------
+# DEMO EXECUTABLES
+# -----------------------------------------------
+
+add_executable(d4_counter_bin
+    demo/counter/src/Main.cpp
+    demo/counter/src/CounterDemo.cpp
+    demo/counter/src/ParseOption.cpp)
+
+target_link_libraries(d4_counter_bin
     PRIVATE
-        ${ZLIB_LIBRARY}
-        ${GMPXX_LIBRARY}
-        ${GMP_LIBRARY}
-        ${MD4_THIRDPARTY_LIBS}
+        d4
+        Boost::program_options
+        GMP::gmp
 )
+
+add_executable(d4_compiler_bin
+    demo/compiler/src/Main.cpp
+    demo/compiler/src/CompilerDemo.cpp
+    demo/compiler/src/ParseOption.cpp)
+
+target_link_libraries(d4_compiler_bin 
+    PRIVATE
+        d4
+        Boost::program_options 
+        GMP::gmp
+)
+
+# -----------------------------------------------
+# TESTING
+# -----------------------------------------------
+
+if(MD4_ENABLE_TESTS)
+    enable_testing()
+    include(cmake/Testing.cmake)
+endif()
+
+# -----------------------------------------------
+# INSTALLATION AND EXPORT
+# -----------------------------------------------
 
 include(GNUInstallDirs)
 
@@ -90,7 +132,7 @@ install(TARGETS d4
 )
 
 install(DIRECTORY include/
-  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/md4
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/md4
 )
 
 install(EXPORT md4Targets
