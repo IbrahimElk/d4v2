@@ -25,7 +25,8 @@ file(GLOB_RECURSE MD4_HEADERS CONFIGURE_DEPENDS "include/*.hpp")
 # DEPENDENCIES
 # -----------------------------------------------
 
-find_package(Boost       CONFIG REQUIRED COMPONENTS program_options)
+find_package(Boost       REQUIRED COMPONENTS program_options)
+
 find_package(GMP         MODULE REQUIRED)
 find_package(GMPXX       MODULE REQUIRED)
 find_package(Flowcutter  MODULE REQUIRED)
