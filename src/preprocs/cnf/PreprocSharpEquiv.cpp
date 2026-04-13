@@ -20,9 +20,9 @@
 
 #include <csignal>
 
-#include "bipe/src/bipartition/methods/Backbone.hpp"
-#include "bipe/src/bipartition/methods/Bipartition.hpp"
-#include "bipe/src/bipartition/methods/DACircuit.hpp"
+#include "bipe/bipartition/methods/Backbone.hpp"
+#include "bipe/bipartition/methods/Bipartition.hpp"
+#include "bipe/bipartition/methods/DACircuit.hpp"
 #include "md4/options/preprocs/OptionPreprocManager.hpp"
 
 namespace d4 {

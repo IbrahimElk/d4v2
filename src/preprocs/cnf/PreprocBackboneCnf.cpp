@@ -23,7 +23,7 @@
 #include <csignal>
 #include <ctime>
 
-#include "bipe/src/bipartition/methods/Method.hpp"
+#include "bipe/bipartition/methods/Method.hpp"
 #include "md4/options/preprocs/OptionPreprocManager.hpp"
 #include "md4/problem/cnf/ProblemManagerCnf.hpp"
 

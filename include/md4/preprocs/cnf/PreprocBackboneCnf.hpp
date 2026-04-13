@@ -21,7 +21,7 @@
 #include <vector>
 
 #include "../PreprocManager.hpp"
-#include "bipe/src/bipartition/methods/Method.hpp"
+#include "bipe/bipartition/methods/Method.hpp"
 #include "md4/problem/ProblemTypes.hpp"
 #include "md4/solvers/WrapperSolver.hpp"
 
