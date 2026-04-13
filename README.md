@@ -19,9 +19,9 @@ D4 is implemented as a library and should be linked into a separate executable f
 To run a simple counter example on a CNF file:
 
 ```bash
-cd demo/counter
-./build.sh
-./build/counter -i ../../instancesTest/cnfs/cnf5.cnf
+cmake --preset dev
+cmake --build --preset dev -j$(nproc)
+./build/d4_counter_bin -i assets/cnfs/counting/cnf12.cnf
 ```
 
 To count models of a circuit-based input, see the example under the `circuit` section below.
@@ -80,7 +80,7 @@ T g3
 To run the model counter on a circuit:
 
 ```bash
-./build/counter -i ../../instancesTest/circuits/circ1.bc --input-type circuit
+./build/d4_compiler_bin -i assets/circuits/circ1.bc --input-type circuit
 ```
 
 ---
@@ -92,5 +92,5 @@ D4 also supports the standard **DIMACS CNF** format. This is widely used in SAT 
 To run a model counter on a CNF file:
 
 ```bash
-./build/counter -i ../../instancesTest/cnfs/cnf5.cnf
+./build/d4_counter_bin -i assets/cnfs/counting/cnf5.cnf
 ```
