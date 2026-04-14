@@ -30,6 +30,7 @@ OptionDpllStyleMethod::OptionDpllStyleMethod(
     const ConfigurationDpllStyleMethod& config) {
   // Operator used:
   optionOperationManager.operatorType = config.operationType;
+  optionOperationManager.customOperation = config.customOperation;
 
   // Cache Options:
   optionCacheManager = OptionCacheManager(config.cache);

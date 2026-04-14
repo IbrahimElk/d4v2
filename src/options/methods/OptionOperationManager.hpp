@@ -25,13 +25,14 @@
 
 namespace d4 {
 
-enum OperationType { OP_COUNTING, OP_CIRC };
+enum OperationType { OP_COUNTING, OP_CIRC, OP_CUSTOM };
 
 class OperationTypeManager {
  public:
   static std::string getOperatorType(const OperationType& m) {
     if (m == OP_COUNTING) return "counting";
     if (m == OP_CIRC) return "ddnnf-compiler";
+    if (m == OP_CUSTOM) return "custom";
 
     throw(FactoryException("Operator Type unknown", __FILE__, __LINE__));
   }  // getOperatorType
@@ -39,6 +40,7 @@ class OperationTypeManager {
   static OperationType getOperatorType(const std::string& m) {
     if (m == "counting" || m == "counting-global-cache") return OP_COUNTING;
     if (m == "ddnnf-compiler") return OP_CIRC;
+    if (m == "custom") return OP_CUSTOM;
 
     throw(FactoryException("Operator Type unknown", __FILE__, __LINE__));
   }  // getOperatorType
@@ -55,6 +57,7 @@ class OperationTypeManager {
 class OptionOperationManager {
  public:
   OperationType operatorType;
+  void* customOperation = nullptr;
 
   friend std::ostream& operator<<(std::ostream& out,
                                   const OptionOperationManager& dt) {

@@ -55,6 +55,11 @@ class Operation {
     if (options.operatorType == OP_CIRC)
       return new DecisionDNNFOperation<T, Node<T> *>(problem, specs, solver);
 
+    if (options.operatorType == OP_CUSTOM) {
+      assert(options.customOperation != nullptr);
+      return options.customOperation;
+    }
+
     throw(FactoryException("Cannot create a Operation", __FILE__, __LINE__));
   }  // makeOperationManager
 
