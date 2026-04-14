@@ -124,6 +124,7 @@ endif()
 # -----------------------------------------------
 
 include(GNUInstallDirs)
+set_target_properties(d4 PROPERTIES OUTPUT_NAME md4)
 
 install(TARGETS d4
     EXPORT md4Targets
