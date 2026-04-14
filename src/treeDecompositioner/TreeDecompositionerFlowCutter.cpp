@@ -17,14 +17,14 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "TreeDecompositionerFlowCutter.hpp"
+#include "md4/treeDecompositioner/TreeDecompositionerFlowCutter.hpp"
 
 #include <chrono>
 #include <ctime>
 #include <iostream>
 #include <sstream>
 
-#include "3rdParty/flowCutter/src/pace.h"
+#include "flowCutter/src/pace.h"
 
 namespace d4 {
 

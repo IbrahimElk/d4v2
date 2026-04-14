@@ -17,11 +17,11 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "PreprocReducer.hpp"
+#include "md4/preprocs/cnf/PreprocReducer.hpp"
 
 #include <csignal>
 
-#include "src/problem/cnf/ProblemManagerCnf.hpp"
+#include "md4/problem/cnf/ProblemManagerCnf.hpp"
 
 namespace d4 {
 

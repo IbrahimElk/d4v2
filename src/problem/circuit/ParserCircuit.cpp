@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "ParserCircuit.hpp"
+#include "md4/problem/circuit/ParserCircuit.hpp"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,8 +29,8 @@
 #include <unordered_map>
 #include <vector>
 
-#include "src/problem/ProblemManager.hpp"
-#include "src/problem/circuit/ProblemManagerCircuit.hpp"
+#include "md4/problem/ProblemManager.hpp"
+#include "md4/problem/circuit/ProblemManagerCircuit.hpp"
 
 namespace d4 {
 

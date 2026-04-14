@@ -17,9 +17,9 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "OptionPartialOrderHeuristic.hpp"
+#include "md4/options/branchingHeuristic/OptionPartialOrderHeuristic.hpp"
 
-#include "src/configurations/ConfigurationPartialOrderHeuristic.hpp"
+#include "md4/configurations/ConfigurationPartialOrderHeuristic.hpp"
 
 namespace d4 {
 /**

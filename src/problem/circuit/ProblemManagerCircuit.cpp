@@ -17,11 +17,11 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "ProblemManagerCircuit.hpp"
+#include "md4/problem/circuit/ProblemManagerCircuit.hpp"
 
-#include "../cnf/ProblemManagerCnf.hpp"
-#include "ParserCircuit.hpp"
-#include "src/problem/ProblemManager.hpp"
+#include "md4/problem/cnf/ProblemManagerCnf.hpp"
+#include "md4/problem/circuit/ParserCircuit.hpp"
+#include "md4/problem/ProblemManager.hpp"
 
 namespace d4 {
 /**

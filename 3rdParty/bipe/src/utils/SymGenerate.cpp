@@ -16,7 +16,7 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "SymGenerate.hpp"
+#include "bipe/utils/SymGenerate.hpp"
 
 namespace bipe {
 

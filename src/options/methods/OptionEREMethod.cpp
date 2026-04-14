@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "OptionEREMethod.hpp"
+#include "md4/options/methods/OptionEREMethod.hpp"
 
 namespace d4 {
 

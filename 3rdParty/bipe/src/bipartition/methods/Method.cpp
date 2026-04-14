@@ -16,15 +16,15 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "src/bipartition/methods/Method.hpp"
+#include "bipe/bipartition/methods/Method.hpp"
 
 #include <vector>
 
-#include "src/bipartition/methods/Backbone.hpp"
-#include "src/bipartition/methods/DACircuit.hpp"
-#include "src/solver/WrapperSolver.hpp"
-#include "src/utils/FactoryException.hpp"
-#include "src/utils/Gate.hpp"
+#include "bipe/bipartition/methods/Backbone.hpp"
+#include "bipe/bipartition/methods/DACircuit.hpp"
+#include "bipe/solver/WrapperSolver.hpp"
+#include "bipe/utils/FactoryException.hpp"
+#include "bipe/utils/Gate.hpp"
 
 namespace bipe {
 namespace bipartition {

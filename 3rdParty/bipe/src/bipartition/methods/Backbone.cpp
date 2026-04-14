@@ -15,12 +15,12 @@
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include "src/bipartition/methods/Backbone.hpp"
+#include "bipe/bipartition/methods/Backbone.hpp"
 
 #include <ctime>
 #include <vector>
 
-#include "src/solver/WrapperSolver.hpp"
+#include "bipe/solver/WrapperSolver.hpp"
 
 namespace bipe {
 namespace bipartition {

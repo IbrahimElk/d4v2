@@ -16,13 +16,13 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
-#include "PartitionerPatoh.hpp"
+#include "md4/partitioner/PartitionerPatoh.hpp"
 
 #include <iostream>
 #include <vector>
 
-#include "3rdParty/patoh/patoh.h"
-#include "src/exceptions/OptionException.hpp"
+#include "patoh/patoh.h"
+#include "md4/exceptions/OptionException.hpp"
 
 namespace d4 {
 

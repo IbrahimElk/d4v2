@@ -26,11 +26,11 @@
 
 #include "CompilerDemo.hpp"
 #include "ParseOption.hpp"
-#include "src/configurations/Configuration.hpp"
-#include "src/methods/MethodManager.hpp"
-#include "src/options/preprocs/OptionPreprocManager.hpp"
-#include "src/preprocs/PreprocManager.hpp"
-#include "src/problem/circuit/ProblemManagerCircuit.hpp"
+#include "md4/configurations/Configuration.hpp"
+#include "md4/methods/MethodManager.hpp"
+#include "md4/options/preprocs/OptionPreprocManager.hpp"
+#include "md4/preprocs/PreprocManager.hpp"
+#include "md4/problem/circuit/ProblemManagerCircuit.hpp"
 
 #ifndef NOMAIN
 

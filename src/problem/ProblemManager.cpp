@@ -16,15 +16,15 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
-#include "ProblemManager.hpp"
+#include "md4/problem/ProblemManager.hpp"
 
 #include <iostream>
 
-#include "circuit/ProblemManagerCircuit.hpp"
-#include "cnf/ProblemManagerCnf.hpp"
-#include "cnf/ProblemManagerErosionCnf.hpp"
-#include "qbf/ProblemManagerQbf.hpp"
-#include "src/exceptions/FactoryException.hpp"
+#include "md4/problem/circuit/ProblemManagerCircuit.hpp"
+#include "md4/problem/cnf/ProblemManagerCnf.hpp"
+#include "md4/problem/cnf/ProblemManagerErosionCnf.hpp"
+#include "md4/problem/qbf/ProblemManagerQbf.hpp"
+#include "md4/exceptions/FactoryException.hpp"
 
 namespace d4 {
 

@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "WrapperGlucose.hpp"
+#include "md4/solvers/cnf/WrapperGlucose.hpp"
 
 #include <bits/stdint-uintn.h>
 
@@ -25,13 +25,13 @@
 #include <typeinfo>
 #include <vector>
 
-#include "3rdParty/glucose-3.0/core/Solver.h"
-#include "3rdParty/glucose-3.0/core/SolverTypes.h"
-#include "3rdParty/glucose-3.0/mtl/Vec.h"
-#include "src/problem/CnfMatrix.hpp"
-#include "src/problem/ProblemManager.hpp"
-#include "src/problem/ProblemTypes.hpp"
-#include "src/utils/ErrorCode.hpp"
+#include "glucose-3.0/core/Solver.h"
+#include "glucose-3.0/core/SolverTypes.h"
+#include "glucose-3.0/mtl/Vec.h"
+#include "md4/problem/CnfMatrix.hpp"
+#include "md4/problem/ProblemManager.hpp"
+#include "md4/problem/ProblemTypes.hpp"
+#include "md4/utils/ErrorCode.hpp"
 
 namespace d4 {
 /**

@@ -17,12 +17,12 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "GraphExtractor.hpp"
+#include "md4/representation/graph/GraphExtractor.hpp"
 
-#include "circuit/GraphExtractorCircuitPrimal.hpp"
-#include "cnf/GraphExtractorCnfPrimal.hpp"
-#include "src/exceptions/FactoryException.hpp"
-#include "src/utils/ErrorCode.hpp"
+#include "md4/representation/graph/circuit/GraphExtractorCircuitPrimal.hpp"
+#include "md4/representation/graph/cnf/GraphExtractorCnfPrimal.hpp"
+#include "md4/exceptions/FactoryException.hpp"
+#include "md4/utils/ErrorCode.hpp"
 
 namespace d4 {
 

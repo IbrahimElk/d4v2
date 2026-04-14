@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "PartialOrderHeuristicNone.hpp"
+#include "md4/heuristics/partialOrder/PartialOrderHeuristicNone.hpp"
 
 namespace d4 {
 

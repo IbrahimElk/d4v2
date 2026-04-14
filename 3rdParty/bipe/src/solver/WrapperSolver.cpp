@@ -15,10 +15,10 @@
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include "src/solver/WrapperSolver.hpp"
+#include "bipe/solver/WrapperSolver.hpp"
 
-#include "src/solver/WrapperGlucose.hpp"
-#include "src/utils/FactoryException.hpp"
+#include "bipe/solver/WrapperGlucose.hpp"
+#include "bipe/utils/FactoryException.hpp"
 
 namespace bipe {
 /**

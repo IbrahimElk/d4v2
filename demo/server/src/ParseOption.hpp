@@ -21,10 +21,10 @@
 #include <boost/program_options.hpp>
 #include <cstring>
 
-#include "src/configurations/Configuration.hpp"
-#include "src/configurations/ConfigurationBranchingHeuristic.hpp"
-#include "src/configurations/ConfigurationCache.hpp"
-#include "src/configurations/ConfigurationPartitioningHeuristic.hpp"
+#include "md4/configurations/Configuration.hpp"
+#include "md4/configurations/ConfigurationBranchingHeuristic.hpp"
+#include "md4/configurations/ConfigurationCache.hpp"
+// #include "md4/configurations/ConfigurationPartitioningHeuristic.hpp"
 
 namespace po = boost::program_options;
 

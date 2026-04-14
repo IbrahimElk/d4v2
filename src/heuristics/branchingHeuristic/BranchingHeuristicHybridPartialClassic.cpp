@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "BranchingHeuristicHybridPartialClassic.hpp"
+#include "md4/heuristics/branchingHeuristic/BranchingHeuristicHybridPartialClassic.hpp"
 
 namespace d4 {
 

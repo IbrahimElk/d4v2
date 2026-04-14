@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "TreeDecompositionPartition.hpp"
+#include "md4/treeDecomposition/TreeDecompositionPartition.hpp"
 
 namespace d4 {
 

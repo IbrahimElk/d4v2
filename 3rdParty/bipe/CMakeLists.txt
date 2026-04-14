@@ -1,79 +1,73 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.10)
+project(bipe VERSION 0.1 LANGUAGES CXX)
 
-# set the project name and version
-project(bipe VERSION 0.1)
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
 
-add_custom_target(clean-cmake-files
-   COMMAND ${CMAKE_COMMAND} -P clean-all.cmake
-)
+option(MD4_ENABLE_PROFILING "Enable gprof profiling" OFF)
+option(MD4_ENABLE_TESTS "Register CTest tests" OFF)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# specify the C++ standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-# source/include files
-file(GLOB_RECURSE SOURCES ./src/**.cpp)
-file(GLOB_RECURSE INCLUDES ./src/**.hpp)
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "./src/**.cpp")
+file(GLOB_RECURSE INCLUDES CONFIGURE_DEPENDS "./include/**.hpp")
 
-set(SRCS ${SOURCES})
-set(HEADERS ${INCLUDES})
+# -----------------------------------------------
+# DEPENDENCIES
+# -----------------------------------------------
 
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rdParty/glucose-3.0/)
+set(DEPENDENCY ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/glucose-3.0/core/libglucose.a)
 
-if (NOT DEFINED BUILD_MODE)
-   set(BUILD_MODE 1)
+# -----------------------------------------------
+# LIBRARY BIPE
+# -----------------------------------------------
+
+add_library(bipe ${SOURCES})
+
+target_include_directories(bipe
+    PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include/bipe>
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/
+        ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/glucose-3.0/
+)
+
+set(BIPE_SUPPRESSED_WARNINGS
+        -Wno-class-memaccess
+        -Wno-format
+        -Wno-misleading-indentation
+        -Wno-literal-suffix
+        -Wno-sign-compare
+        -Wno-parentheses
+)
+
+target_link_libraries(bipe PRIVATE ${DEPENDENCY})
+target_compile_definitions(bipe PRIVATE NOMAIN)
+target_compile_options(bipe PRIVATE -Wall ${BIPE_SUPPRESSED_WARNINGS})
+
+if(MD4_ENABLE_PROFILING)
+    target_compile_options(bipe PRIVATE -pg)
+    target_link_options(bipe PRIVATE -pg)
 endif()
 
+# -----------------------------------------------
+# INSTALLATION AND EXPORT
+# -----------------------------------------------
 
-set(libList ${CMAKE_SOURCE_DIR}/3rdParty/glucose-3.0/core/libglucose.a)
+install(TARGETS bipe EXPORT md4Targets DESTINATION lib)
+install(FILES ${HEADERS} DESTINATION include/${CMAKE_PROJECT_NAME})
 
-# flags
-if(${BUILD_MODE} EQUAL 1)  
-  message("Debug: Library creation")
-  set(CMAKE_BUILD_TYPE Debug)    
-  add_library(bipe ${SRCS})    
-
-  target_compile_options(bipe PUBLIC -DNOMAIN -std=c++20 -Wall -pg -O2 -Wno-class-memaccess -Wno-format -Wno-misleading-indentation -Wno-literal-suffix -Wno-sign-compare -Wno-parentheses)
-  target_link_libraries (bipe -lz -O2 ${libList})
-  target_include_directories (bipe PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
-  install (TARGETS bipe DESTINATION lib)
-  install (FILES ${HEADER} DESTINATION include/${CMAKE_PROJECT_NAME})  
-elseif(${BUILD_MODE} EQUAL 2)  
-  message("Static: Library creation")
-  set(CMAKE_BUILD_TYPE Release)
-  add_library(bipe ${SRCS})
-
-  target_compile_options(bipe PUBLIC -DNOMAIN -std=c++20 -Wall -O3 -Wno-class-memaccess -Wno-format -Wno-misleading-indentation -Wno-literal-suffix -Wno-sign-compare -Wno-parentheses -static)
-  target_link_libraries (bipe -lz -O3 ${libList} -static)
-  target_include_directories (bipe PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
-  install (TARGETS bipe DESTINATION lib)
-  install (FILES ${HEADER} DESTINATION include/${CMAKE_PROJECT_NAME})
-elseif(${BUILD_MODE} EQUAL 0)
-  message("Library creation")
-  add_library(bipe ${SRCS})
-
-  target_compile_options(bipe PUBLIC -DNOMAIN -std=c++20 -Wall -O3 -Wno-class-memaccess -Wno-format -Wno-misleading-indentation -Wno-literal-suffix -Wno-sign-compare -Wno-parentheses)
-  target_link_libraries (bipe -lz -O3 ${libList})
-  target_include_directories (bipe PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
-  install (TARGETS bipe DESTINATION lib)
-  install (FILES ${HEADER} DESTINATION include/${CMAKE_PROJECT_NAME})
-else()  
-  message("Error!")  
-endif()
-
-
-file(GLOB cmake_generated ${CMAKE_SOURCE_DIR}/srcBipe/*~)
-
+file(GLOB cmake_generated ${CMAKE_CURRENT_SOURCE_DIR}/srcBipe/*~)
 foreach(file ${cmake_generated})
-
   if (EXISTS ${file})
      file(REMOVE_RECURSE ${file})
   endif()
-
 endforeach(file)

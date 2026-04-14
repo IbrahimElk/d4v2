@@ -17,10 +17,10 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "ProblemManagerErosionCnf.hpp"
+#include "md4/problem/cnf/ProblemManagerErosionCnf.hpp"
 
-#include "ParserErosionDimacs.hpp"
-#include "src/problem/ProblemManager.hpp"
+#include "md4/problem/cnf/ParserErosionDimacs.hpp"
+#include "md4/problem/ProblemManager.hpp"
 
 namespace d4 {
 /**

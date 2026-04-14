@@ -17,12 +17,12 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "TreeDecomposition.hpp"
+#include "md4/treeDecomposition/TreeDecomposition.hpp"
 
-#include "TreeDecompositionPartition.hpp"
-#include "TreeDecompositionTreeWidth.hpp"
-#include "src/exceptions/FactoryException.hpp"
-#include "src/options/branchingHeuristic/OptionPartialOrderHeuristic.hpp"
+#include "md4/treeDecomposition/TreeDecompositionPartition.hpp"
+#include "md4/treeDecomposition/TreeDecompositionTreeWidth.hpp"
+#include "md4/exceptions/FactoryException.hpp"
+#include "md4/options/branchingHeuristic/OptionPartialOrderHeuristic.hpp"
 
 namespace d4 {
 

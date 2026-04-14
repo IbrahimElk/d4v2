@@ -17,15 +17,15 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "WrapperCircuitMinisat.hpp"
+#include "md4/solvers/circuit/WrapperCircuitMinisat.hpp"
 
 #include <cassert>
 #include <iostream>
 #include <typeinfo>
 
-#include "src/problem/ProblemManager.hpp"
-#include "src/problem/circuit/ProblemManagerCircuit.hpp"
-#include "src/utils/ErrorCode.hpp"
+#include "md4/problem/ProblemManager.hpp"
+#include "md4/problem/circuit/ProblemManagerCircuit.hpp"
+#include "md4/utils/ErrorCode.hpp"
 
 namespace d4 {
 using minisat::toInt;

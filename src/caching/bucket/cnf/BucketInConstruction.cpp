@@ -16,7 +16,7 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
-#include "BucketInConstruction.hpp"
+#include "md4/caching/bucket/cnf/BucketInConstruction.hpp"
 
 namespace d4 {
 /**

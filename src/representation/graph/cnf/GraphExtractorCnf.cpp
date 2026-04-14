@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "GraphExtractorCnf.hpp"
+#include "md4/representation/graph/cnf/GraphExtractorCnf.hpp"
 
 namespace d4 {
 

@@ -16,11 +16,11 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "src/bipartition/heuristic/HeuristicBipartitionGenTaut.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartitionGenTaut.hpp"
 
 #include <algorithm>
 
-#include "src/bipartition/heuristic/HeuristicBipartitionRandom.hpp"
+#include "bipe/bipartition/heuristic/HeuristicBipartitionRandom.hpp"
 
 namespace bipe {
 namespace bipartition {

@@ -17,7 +17,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#include "HyperEdge.hpp"
+#include "md4/representation/hypergraph/HyperEdge.hpp"
 
 #include <iostream>
 

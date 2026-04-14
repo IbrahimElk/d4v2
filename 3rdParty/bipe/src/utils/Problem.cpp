@@ -16,7 +16,7 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "Problem.hpp"
+#include "bipe/utils/Problem.hpp"
 
 namespace bipe {
 
