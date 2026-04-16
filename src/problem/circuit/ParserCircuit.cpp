@@ -29,38 +29,12 @@
 #include <unordered_map>
 #include <vector>
 
+#include "md4/problem/circuit/LitNameMap.hpp"
 #include "md4/problem/ProblemManager.hpp"
 #include "md4/problem/circuit/ProblemManagerCircuit.hpp"
 
+
 namespace d4 {
-
-/**
- * @brief LitNameMap is a wrapper around an unordered_map,
- * used to map literal names (string) to their corresponding Literal.
- *
- * It keeps track of a nextVar, to assign newly observed litnames.
- */
-class LitNameMap {
- private:
-  std::unordered_map<std::string, Lit> name_map;
-
- public:
-  Var nextVar = 1;
-
-  Lit get_lit(std::string &name) {
-    // TODO: QoL can we change/pass a constructor to name_map, to replace this
-    // if-check?
-    if (!name_map.contains(name)) name_map[name] = Lit::makeLitTrue(nextVar++);
-    return name_map[name];
-  }
-
-  Lit add_new(std::string &name) {
-    if (name_map.contains(name))
-      throw std::invalid_argument("Key " + name + " already defined.");
-    name_map[name] = Lit::makeLitTrue(nextVar++);
-    return name_map[name];
-  }
-};
 
 /**
  * @brief Auxiliary method to process gate definition.
