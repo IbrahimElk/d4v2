@@ -31,6 +31,7 @@ namespace d4 {
  */
 ProblemManagerCircuit::ProblemManagerCircuit(const std::string &nameFile) {
   ParserCircuit parser;
+  m_pLitNameMap = new LitNameMap();
   m_nbVar = parser.parse_circuit(nameFile, this);
   assert(m_weightLit.size() == ((m_nbVar + 1) << 1));
   m_weightVar.resize(m_nbVar + 1, 0);
@@ -40,6 +41,31 @@ ProblemManagerCircuit::ProblemManagerCircuit(const std::string &nameFile) {
   m_order.resize(m_nbVar + 1);
   for (unsigned i = 0; i < m_order.size(); i++) m_order[i] = i;
 }  // constructor
+
+
+/**
+   Constructor.
+ 
+   @param[in] nameFile, parse the instance from a file
+   @param[in] sharedMap, an externally-owned LitNameMap
+              so that mappings persist across compilations.
+ */
+ProblemManagerCircuit::ProblemManagerCircuit(
+    const std::string &nameFile,
+    LitNameMap &sharedMap) {
+  m_pLitNameMap = &sharedMap;
+
+  ParserCircuit parser;
+  m_nbVar = parser.parse_circuit(nameFile, this);
+  assert(m_weightLit.size() == ((m_nbVar + 1) << 1));
+  m_weightVar.resize(m_nbVar + 1, 0);
+  for (unsigned i = 0; i <= m_nbVar; i++)
+    m_weightVar[i] = m_weightLit[i << 1] + m_weightLit[(i << 1) + 1];
+
+  m_order.resize(m_nbVar + 1);
+  for (unsigned i = 0; i < m_order.size(); i++) m_order[i] = i;
+}  // constructor
+
 
 /**
    Constructor.

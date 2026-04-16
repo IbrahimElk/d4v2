@@ -197,8 +197,11 @@ inline void process_weight_comment(std::string &line, std::string &nextWord,
  */
 int ParserCircuit::parse_circuit_main(std::ifstream &in,
                                       ProblemManagerCircuit *problemManager) {
-  LitNameMap litname_map;  // TODO: Should this be part of problemManager? We
-                           // later need those names? Only for input vars?
+  // NOTE(Ibrahim):
+  // Use the LitNameMap stored on PMC
+  // so it persists and can be shared.
+  LitNameMap &litname_map = problemManager->getLitNameMap();
+
   Var &nextVar = litname_map.nextVar;
 
   std::vector<Lit> &true_lits = problemManager->getTrueLiterals();
