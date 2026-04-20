@@ -17,9 +17,6 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 #include "md4/caching/DataInfo.hpp"
-
-#include <bits/stdint-uintn.h>
-
 #include <bitset>
 
 namespace d4 {
