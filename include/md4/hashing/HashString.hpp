@@ -18,6 +18,7 @@
  */
 #pragma once
 
+#include <cstdint>
 #include <sys/types.h>
 
 #include <cstddef>
@@ -28,12 +29,15 @@ namespace d4 {
 class HashString {
  public:
   inline unsigned hash(char *key, unsigned len) {
-    return std::_Hash_bytes(key, len, 29111983);
+    // return std::_Hash_bytes(key, len, 29111983);
+    return static_cast<unsigned>(std::hash<std::string_view>{}(std::string_view(key, len)));
   }  // hash
 
   inline unsigned hash(char *key, unsigned len, u_int64_t info) {
-    unsigned dataHash = std::_Hash_bytes(key, len, 29111983);
-    unsigned infoHash = std::_Hash_bytes(&info, sizeof(u_int64_t), 30011989);
+    // unsigned dataHash = std::_Hash_bytes(key, len, 29111983);
+    unsigned dataHash = std::hash<std::string_view>{}(std::string_view(key, len));
+    // unsigned infoHash = std::_Hash_bytes(&info, sizeof(u_int64_t), 30011989);
+    unsigned infoHash = static_cast<unsigned>(std::hash<std::uint64_t>{}(info));
     return dataHash ^
            (infoHash + 0x9e3779b9 + (dataHash << 6) + (dataHash >> 2));
   }  // hash
