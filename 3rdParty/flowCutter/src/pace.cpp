@@ -1,4 +1,3 @@
-
 #include "pace.h"
 
 #include <signal.h>
@@ -361,6 +360,11 @@ const char* paceMain(unsigned nbNode,
                      int maxNbTrail, unsigned timeout, bool rageQuit,
                      int random_seed) {
   signal(SIGALRM, signal_handler);
+
+  delete[] best_decomposition;
+  best_decomposition = nullptr;
+  best_bag_size = std::numeric_limits<int>::max();
+  tle = 0;
 
   try {
     {
