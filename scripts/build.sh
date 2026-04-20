@@ -24,3 +24,4 @@ fi
 cmake --preset dev
 cmake --build --preset dev -j$NPROC
 $SUDO cmake --install build
+# ctest --preset dev
