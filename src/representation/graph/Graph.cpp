@@ -25,6 +25,7 @@ namespace d4 {
  */
 void Graph::addEdge(const std::pair<unsigned, unsigned> &edge) {
   unsigned l = edge.first, r = edge.second;
+  if (l == r) return;
   if (l > r) std::swap(l, r);
 
   if (m_adjList[l].find(r) == m_adjList[l].end()) {
