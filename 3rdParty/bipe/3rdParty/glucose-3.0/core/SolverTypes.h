@@ -115,9 +115,9 @@ inline int litToInt(Lit l) { return sign(l) ? -(var(l)) : (var(l)); }
 //       code, and this appears to be somewhat fragile unfortunately.
 
 // gcc does not do constant propagation if these are real constants.
-// #define l_True (Glucose_bipe::lbool((uint8_t)0))
-// #define l_False (Glucose_bipe::lbool((uint8_t)1))
-// #define l_Undef (Glucose_bipe::lbool((uint8_t)2))
+// #define l_True (bipe::Glucose::lbool((uint8_t)0))
+// #define l_False (bipe::Glucose::lbool((uint8_t)1))
+// #define l_Undef (bipe::Glucose::lbool((uint8_t)2))
 
 class lbool {
   uint8_t value;

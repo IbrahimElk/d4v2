@@ -63,7 +63,7 @@ void print_tree_decompostion_of_order(std::ostream& out, ArrayIDIDFunc tail,
       if (is_left_subset_of_right(clique, nodes_in_bag[b])) return;
     int bag_id = nodes_in_bag.size();
     for (auto x : clique) bags_of_node[x].push_back(bag_id);
-    nodes_in_bag.push_back(move(clique));
+    nodes_in_bag.push_back(std::move(clique));
   };
 
   {
@@ -76,7 +76,7 @@ void print_tree_decompostion_of_order(std::ostream& out, ArrayIDIDFunc tail,
       if (z != -1 && z != x) {
         upper_neighborhood_of_z.push_back(z);
         sort(upper_neighborhood_of_z.begin(), upper_neighborhood_of_z.end());
-        on_new_potential_maximal_clique(z, move(upper_neighborhood_of_z));
+        on_new_potential_maximal_clique(z, std::move(upper_neighborhood_of_z));
         upper_neighborhood_of_z.clear();
       }
       z = x;
@@ -85,7 +85,7 @@ void print_tree_decompostion_of_order(std::ostream& out, ArrayIDIDFunc tail,
     if (z != -1) {
       upper_neighborhood_of_z.push_back(z);
       sort(upper_neighborhood_of_z.begin(), upper_neighborhood_of_z.end());
-      on_new_potential_maximal_clique(z, move(upper_neighborhood_of_z));
+      on_new_potential_maximal_clique(z, std::move(upper_neighborhood_of_z));
     }
 
     for (int x = 0; x < node_count; ++x) {

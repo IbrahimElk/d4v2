@@ -20,6 +20,7 @@
 
 #include "md4/problem/ProblemManager.hpp"
 #include "md4/problem/ProblemTypes.hpp"
+#include "md4/problem/circuit/LitNameMap.hpp"
 
 namespace d4 {
 
@@ -68,6 +69,8 @@ class ProblemManagerCircuit : public ProblemManager {
   std::vector<Lit> m_true_lits;  // conjunction of output literals that must be
                                  // true. unsigned m_nbInputVars;
 
+  LitNameMap *m_pLitNameMap;
+
  public:
   ProblemManagerCircuit();
 
@@ -83,6 +86,8 @@ class ProblemManagerCircuit : public ProblemManager {
   ProblemManagerCircuit(ProblemManager *problem);
 
   ProblemManagerCircuit(const std::string &nameFile);
+
+  ProblemManagerCircuit(const std::string &nameFile, LitNameMap &sharedMap);
 
   ~ProblemManagerCircuit();
   void display(std::ostream &out) override;
@@ -103,6 +108,16 @@ class ProblemManagerCircuit : public ProblemManager {
    * @param[out] outVars store the input vars.
    */
   void getInputVar(std::vector<Var> &outVars);
+
+  LitNameMap &getLitNameMap() {
+    assert(m_pLitNameMap != nullptr);
+    return *m_pLitNameMap;
+  }
+
+  const LitNameMap &getLitNameMap() const {
+    assert(m_pLitNameMap != nullptr);
+    return *m_pLitNameMap;
+  }
 
   std::vector<BcGate> &getGates() { return m_gates; }
   std::vector<Lit> &getTrueLiterals() { return m_true_lits; }

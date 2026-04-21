@@ -1,6 +1,6 @@
 /*
  * d4
- * Copyright (C) 2020  Univ. Artois & CNRS
+ * Copyright (C) 2024  Univ. Artois & CNRS & KU Leuven
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,30 +16,32 @@
  * along with this library; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
+#pragma once
 
-#include "md4/representation/graph/Graph.hpp"
+#include <string>
+#include <unordered_map>
+#include "md4/problem/ProblemTypes.hpp"
 
 namespace d4 {
-/**
- * @brief Graph::addEdge implementation.
- */
-void Graph::addEdge(const std::pair<unsigned, unsigned> &edge) {
-  unsigned l = edge.first, r = edge.second;
-  if (l == r) return;
-  if (l > r) std::swap(l, r);
 
-  if (m_adjList[l].find(r) == m_adjList[l].end()) {
-    m_edges.push_back(std::make_pair(l, r));
-    m_adjList[l].insert(r);
+class LitNameMap {
+ private:
+  std::unordered_map<std::string, Lit> name_map;
+
+ public:
+  Var nextVar = 1;
+
+  Lit get_lit(std::string &name) {
+    if (!name_map.contains(name)) name_map[name] = Lit::makeLitTrue(nextVar++);
+    return name_map[name];
   }
-}  // addEdge
 
-/**
- * @brief Graph::display implementation.
- */
-void Graph::display(std::ostream &out) {
-  out << "#nodes: " << m_nbNode << "\n";
-  for (auto &p : m_edges) out << p.first << " " << p.second << '\n';
-}  // display
+  Lit add_new(std::string &name) {
+    if (name_map.contains(name))
+      throw std::invalid_argument("Key " + name + " already defined.");
+    name_map[name] = Lit::makeLitTrue(nextVar++);
+    return name_map[name];
+  }
+};
 
 }  // namespace d4

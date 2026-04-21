@@ -137,8 +137,9 @@ Problem *Method::simplifyBackbone(Problem &p,
     std::cout << "c [BiPe] The formula is unsatisfiable.\n";
     formula = p.getUnsatProblem();
     assert(formula->isTriviallyUnsat());
+  } else {
+    assert(!formula->isTriviallyUnsat());
   }
-  assert(!formula->isTriviallyUnsat());
 
   Backbone *tmp = m_backboneMethod;
   m_backboneMethod = nullptr;

@@ -1,0 +1,21 @@
+name: build
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build_deps:
+    strategy:
+      matrix:
+        include:
+          - os: macos-latest
+            platform: macos
+          # - os: ubuntu-latest
+          #   platform: linux
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: build
+        run: bash ./scripts/build.sh

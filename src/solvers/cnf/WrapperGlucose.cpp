@@ -19,7 +19,7 @@
 
 #include "md4/solvers/cnf/WrapperGlucose.hpp"
 
-#include <bits/stdint-uintn.h>
+#include <cstdint>
 
 #include <iostream>
 #include <typeinfo>

@@ -18,7 +18,7 @@
  */
 #include "md4/preprocs/cnf/PreprocBackboneCnf.hpp"
 
-#include <bits/types/clock_t.h>
+#include <ctime>
 
 #include <csignal>
 #include <ctime>
