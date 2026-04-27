@@ -1,13 +1,17 @@
 cmake_minimum_required(VERSION 3.10)
 project(md4 VERSION 0.1 LANGUAGES CXX)
 
+# -----------------------------------------------
+# BASIC SETTINGS
+# -----------------------------------------------
+
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
 endif()
 
 # option(MD4_STATIC_LINK "Build with static linking" OFF)
 option(MD4_ENABLE_PROFILING "Enable gprof profiling" OFF)
-option(MD4_ENABLE_TESTS "Register CTest tests" OFF)
+option(ENABLE_TESTING "Register CTest tests" OFF)
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -47,12 +51,14 @@ set(dependencies
 
 set(MD4_SUPPRESSED_WARNINGS
     -Wno-strict-aliasing
+    # NOTE(Ibrahim): GCC-only warning, macOS uses clang
     -Wno-class-memaccess
     -Wno-format
     -Wno-misleading-indentation
     -Wno-literal-suffix
     -Wno-sign-compare
     -Wno-parentheses
+    # NOTE(Ibrahim): GCC-only warning, macOS uses clang
     -Wno-restrict
 )
 
@@ -81,6 +87,15 @@ if(MD4_ENABLE_PROFILING)
     target_compile_options(d4 PRIVATE -pg)
     target_link_options(d4 PRIVATE -pg)
 endif()
+
+# -----------------------------------------------
+# EXPORT FOR BUILD TREE
+# -----------------------------------------------
+
+export(EXPORT md4Targets
+    FILE "${CMAKE_BINARY_DIR}/md4Targets.cmake"
+    NAMESPACE md4::
+)
 
 # -----------------------------------------------
 # DEMO EXECUTABLES
@@ -114,13 +129,13 @@ target_link_libraries(d4_compiler_bin
 # TESTING
 # -----------------------------------------------
 
-if(MD4_ENABLE_TESTS)
+if(ENABLE_TESTING)
     enable_testing()
     include(cmake/Testing.cmake)
 endif()
 
 # -----------------------------------------------
-# INSTALLATION AND EXPORT
+# INSTALL TREE EXPORT
 # -----------------------------------------------
 
 include(GNUInstallDirs)
@@ -143,6 +158,9 @@ install(EXPORT md4Targets
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/md4
 )
 
+# -----------------------------------------------
+# CONFIG FILE
+# -----------------------------------------------
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
