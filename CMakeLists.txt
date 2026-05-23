@@ -126,7 +126,7 @@ endif()
 include(GNUInstallDirs)
 set_target_properties(d4 PROPERTIES OUTPUT_NAME md4)
 
-install(TARGETS d4
+install(TARGETS d4 d4_compiler_bin d4_counter_bin
     EXPORT md4Targets
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
