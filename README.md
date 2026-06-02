@@ -94,3 +94,26 @@ To run a model counter on a CNF file:
 ```bash
 ./build/d4_counter_bin -i assets/cnfs/counting/cnf5.cnf
 ```
+
+---
+
+## License
+
+D4 is licensed under GNU LESSER GENERAL PUBLIC LICENSE, v2.1
+
+The codebase contains bipe (AGPL-3.0), PaToH (non-commercial only),
+FlowCutter (BSD-2-Clause), Glucose 3.0 / MiniSat (MIT), and
+Boost.Multiprecision (BSL-1.0).
+
+* PaToH is licensed for NON-COMMERCIAL AND ACADEMIC/RESEARCH USE ONLY.
+Commercial use requires a separate paid license from Ümit V. Çatalyürek
+(umit@gatech.edu). Redistribution of PaToH in any form requires
+explicit written permission from the copyright holder.
+See 3rdParty/patoh/build/Linux-aarch64/README for full details.
+
+* bipe is licensed under the GNU Affero General Public License v3 (AGPL-3.0-or-later).
+The complete Corresponding Source for the combined libmd4 work is
+available at: https://github.com/crillab/d4v2
+See 3rdParty/bipe/LICENSE for full details.
+
+By installing or using this package you agree to the terms of all licenses.
