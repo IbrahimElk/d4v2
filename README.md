@@ -1,3 +1,5 @@
+This is a fork of [d4v2](https://github.com/crillab/d4v2).
+
 # D4 Project
 
 D4 is a library designed to compute model counts of logical formulas. It currently supports CNF and circuit-based formats, and can be integrated into custom applications for advanced reasoning and model enumeration tasks.
@@ -99,19 +101,27 @@ To run a model counter on a CNF file:
 
 ## License
 
-D4 is licensed under GNU LESSER GENERAL PUBLIC LICENSE, v2.1
+This project combines multiple third-party libraries under different licenses:
 
-The codebase contains bipe (AGPL-3.0), PaToH (non-commercial only),
-FlowCutter (BSD-2-Clause), Glucose 3.0 / MiniSat (MIT), and
-Boost.Multiprecision (BSL-1.0).
+- **d4 core**: GNU Lesser General Public License v2.1 (LGPLv2.1)
+- **bipe**: GNU Affero General Public License v3 (AGPLv3)
+- **flowCutter**: BSD 2-Clause License
+- **Glucose SAT Solver**: MIT License
+- **GMP/GMPXX**: GNU Lesser General Public License v3+ (LGPLv3+)
+- **MiniSat**: MIT License
+- **Boost**: Boost Software License
+- **PaToH**: Non-commercial research license (see below)
 
-* PaToH is licensed for NON-COMMERCIAL AND ACADEMIC/RESEARCH USE ONLY.
-Commercial use requires a separate paid license from Ümit V. Çatalyürek
-(umit@gatech.edu). Redistribution of PaToH in any form requires
-explicit written permission from the copyright holder.
+
+PaToH (Partitioning Tools for Hypergraphs) is available free of charge for
+non-commercial, research use by academic/research institutions.
+**Commercial use requires a separate commercial license.** 
+For commercial license inquiries, contact: Ümit V. Çatalyürek (umit@gatech.edu).
+Redistribution of PaToH in any form requires explicit written permission from the copyright holder.
 See 3rdParty/patoh/build/Linux-aarch64/README for full details.
 
-* bipe is licensed under the GNU Affero General Public License v3 (AGPL-3.0-or-later).
+
+bipe is licensed under the GNU Affero General Public License v3 (AGPL-3.0-or-later).
 The complete Corresponding Source for the combined libmd4 work is
 available at: https://github.com/crillab/d4v2
 See 3rdParty/bipe/LICENSE for full details.
