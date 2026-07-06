@@ -101,29 +101,19 @@ To run a model counter on a CNF file:
 
 ## License
 
-This project combines multiple third-party libraries under different licenses:
+The d4 code in this repository is licensed under LGPL-2.1-or-later (see `LICENSE`).
 
-- **d4 core**: GNU Lesser General Public License v2.1 (LGPLv2.1)
-- **bipe**: GNU Affero General Public License v3 (AGPLv3)
-- **flowCutter**: BSD 2-Clause License
-- **Glucose SAT Solver**: MIT License
-- **GMP/GMPXX**: GNU Lesser General Public License v3+ (LGPLv3+)
-- **MiniSat**: MIT License
-- **Boost**: Boost Software License
-- **PaToH**: Non-commercial research license (see below)
+This project also includes third-party components with their own licenses:
 
+- **bipe**: AGPL-3.0-or-later (`3rdParty/bipe/LICENSE`)
+- **flowCutter**: BSD 2-Clause (`3rdParty/flowCutter/LICENSE`)
+- **Glucose**: MIT-style header notices in source files (for example `3rdParty/glucose-3.0/utils/Options.h`)
+- **GMP/GMPXX**: LGPL-3.0-or-later (system dependency)
+- **MiniSat** (scripts): MIT (`scripts/minisatSolver/LICENSE`)
+- **Boost**: Boost Software License (system dependency)
+- **PaToH**: binary distribution for non-commercial research use (`3rdParty/patoh/build/Linux-aarch64/README`)
 
-PaToH (Partitioning Tools for Hypergraphs) is available free of charge for
-non-commercial, research use by academic/research institutions.
-**Commercial use requires a separate commercial license.** 
-For commercial license inquiries, contact: Ümit V. Çatalyürek (umit@gatech.edu).
-Redistribution of PaToH in any form requires explicit written permission from the copyright holder.
-See 3rdParty/patoh/build/Linux-aarch64/README for full details.
+PaToH notice (from the bundled README): free of charge for non-commercial, research use;
+commercial use requires a separate commercial license. Contact: umit@gatech.edu.
 
-
-bipe is licensed under the GNU Affero General Public License v3 (AGPL-3.0-or-later).
-The complete Corresponding Source for the combined libmd4 work is
-available at: https://github.com/crillab/d4v2
-See 3rdParty/bipe/LICENSE for full details.
-
-By installing or using this package you agree to the terms of all licenses.
+For a consolidated list with locations and notes, see `DEPENDENCIES.md`.

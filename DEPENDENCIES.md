@@ -1,78 +1,69 @@
 # Third-Party Dependencies
 
-## Summary
+## Scope
 
-d4v2 is released under LGPLv2.1 and depends on several third-party libraries with
-different licenses (all permissive for non-commercial academic use).
+This file summarizes third-party license notices for this repository.
+The project license for d4 code is `LGPL-2.1-or-later` (see `LICENSE`).
+Third-party components keep their own license terms.
 
-## Dependencies by Category
+## Components
 
-### Core Computation
-- **GMP/GMPXX** (v6.3+): LGPLv3+
-    - Used for arbitrary-precision arithmetic
-    - License: GNU Lesser General Public License v3 or later
+### In-tree dependencies
 
-### SAT Solving & Logic
-- **Glucose** (v3.0): MIT License
-    - SAT solver for logical reasoning
-    - Authors: Niklas Sorensson (2008-2010)
-    - License: Permissive (MIT)
+- **bipe**
+  - License: AGPL-3.0-or-later
+  - Location: `3rdParty/bipe/`
+  - License text: `3rdParty/bipe/LICENSE`
 
-- **MiniSat**: MIT License
-    - SAT solver library
-    - Authors: Niklas Sorensson
-    - License: Permissive (MIT)
+- **flowCutter**
+  - License: BSD 2-Clause
+  - Location: `3rdParty/flowCutter/`
+  - License text: `3rdParty/flowCutter/LICENSE`
 
-### Hypergraph Partitioning
-- **PaToH** (v3.2): Non-Commercial Research License
-    - Purpose: Multilevel hypergraph partitioning
-    - Copyright: (c) 1996- Umit V. Catalyurek
-    - **License Terms**: Free for non-commercial research use only
-    - **Commercial Use**: Requires separate commercial license
-    - **Contact**: umit@gatech.edu
-    - **Research Use**: Allowed with attribution
+- **Glucose 3.0**
+  - License: MIT-style notices in source headers
+  - Location: `3rdParty/glucose-3.0/`
+  - Example notice: `3rdParty/glucose-3.0/utils/Options.h`
 
-### Tree Decomposition & Heuristics
-- **bipe**: GNU Affero General Public License v3 (AGPLv3)
-    - Used for constraint-based reasoning
-    - Copyright: (c) 2021 Jean-Marie Lagniez
-    - License: AGPLv3 (strong copyleft)
-    - Academic Use: Compatible
+- **MiniSat**
+  - License: MIT
+  - Location: `scripts/minisatSolver/`
+  - License text: `scripts/minisatSolver/LICENSE`
 
-- **flowCutter**: BSD 2-Clause License
-    - Tree decomposition algorithm
-    - Copyright: (c) 2016 Ben Strasser
-    - License: Permissive (BSD 2-Clause)
+- **PaToH 3.2 binaries**
+  - License: non-commercial research use (binary distribution)
+  - Locations:
+    - `3rdParty/patoh/build/Linux-aarch64/README`
+    - `3rdParty/patoh/build/Linux-x86_64/README`
+    - `3rdParty/patoh_mac/build/Darwin-arm64/README`
+    - `3rdParty/patoh_mac/build/Darwin-x86_64/README`
+  - Notice excerpt: non-commercial research use is free of charge; commercial use requires a separate license
+  - Contact: `umit@gatech.edu`
 
-### Build & Utility
-- **Boost** (program_options): Boost Software License
-    - Command-line argument parsing
-    - License: Permissive
----
+### System dependencies (resolved by CMake)
 
-## License Implications for Academic Use
+- **Boost (program_options)**: Boost Software License
+- **GMP / GMPXX**: LGPL-3.0-or-later
 
-### For Research Publication ✅
-- You may use this project for research
-- You may publish results
-- Attribute PaToH and other dependencies as shown below
+## Practical Notes for Academic Use
 
-### For Commercial Use ❌
-- PaToH prohibits commercial use without separate license
-- AGPLv3 (bipe) imposes additional network-distribution requirements
+- Keep `LICENSE` and this file when redistributing source snapshots.
+- Keep all third-party license files and README notices listed above.
+- If you publish binaries including PaToH artifacts, re-check PaToH redistribution terms with the copyright holder.
+- If you modify or redistribute components under AGPL/LGPL, follow their corresponding source-notice obligations.
 
-## Attribution
+## Attribution Template
 
-Please include the following in your documentation:
-```
-d4v2 - Model Counting Library Copyright (c) 2022 Jean-Marie Lagniez Licensed under LGPLv2.1
+```text
+d4v2 fork - model counting library
+Project code: LGPL-2.1-or-later
 
-Third-party components:
-* PaToH (c) 1996- Umit V. Catalyurek - Non-commercial research license
-* bipe (c) 2021 Jean-Marie Lagniez - AGPLv3
-* flowCutter (c) 2016 Ben Strasser - BSD 2-Clause
-* Glucose (c) 2008-2010 Niklas Sorensson - MIT
-* MiniSat (c) 2003-2010 Niklas Sorensson - MIT
-* GMP/GMPXX - LGPLv3+
-* Boost - Boost Software License
+Includes third-party components:
+- bipe (AGPL-3.0-or-later)
+- flowCutter (BSD 2-Clause)
+- Glucose 3.0 (MIT-style source notices)
+- MiniSat scripts copy (MIT)
+- PaToH binaries (non-commercial research-use notice)
+- Boost (Boost Software License)
+- GMP/GMPXX (LGPL-3.0-or-later)
 ```
